@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+    tools:context=".home.HomeFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,10 +12,39 @@
         android:gravity="center">
 
         <Button
-            android:id="@+id/Login"
-            android:layout_width="100sp"
+            android:id="@+id/Home_Btn_Login"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50sp"
             android:text="Login" />
+
+        <Button
+            android:id="@+id/Home_Btn_Report"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50sp"
+            android:text="우리가게 보고서" />
+
+        <Button
+            android:id="@+id/Home_Btn_Search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50sp"
+            android:text="이 벌레 뭐지?" />
+
+        <Button
+            android:id="@+id/Home_Btn_Community"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50sp"
+            android:text="Zone-Talk" />
+
+        <Button
+            android:id="@+id/Home_Btn_AboutUs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50sp"
+            android:text="디버깅이 궁금해요!" />
 
     </LinearLayout>
 

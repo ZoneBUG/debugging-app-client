@@ -1,4 +1,4 @@
-package com.zonebug.debugging
+package com.zonebug.debugging.home
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import com.zonebug.debugging.R
+import com.zonebug.debugging.login.LoginActivity
 
 
 class HomeFragment : Fragment() {
@@ -21,11 +23,10 @@ class HomeFragment : Fragment() {
     ): View? {
 
         val view = inflater.inflate(R.layout.fragment_home, container, false)
-        val login : Button = view.findViewById(R.id.Login)
+        val loginBtn : Button = view.findViewById(R.id.Home_Btn_Login)
 
 
-
-        login.setOnClickListener {
+        loginBtn.setOnClickListener {
             val intent = Intent(context, LoginActivity::class.java)
             startActivity(intent)
         }

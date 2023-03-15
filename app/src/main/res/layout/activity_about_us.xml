@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".aboutus.AboutUsActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/Toolbar_AboutUs"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/white"
+        app:titleTextColor="@color/black"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/Toolbar_AboutUs_Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:lineSpacingExtra="3.3sp"
+            android:layout_gravity="center_horizontal"
+            android:text="About Us"
+            android:textSize="25sp"
+            android:fontFamily="@font/main_font_sb"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/AboutUs_Container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginTop="70dp"
+        android:paddingHorizontal="45sp">
+
+        <LinearLayout
+            android:id="@+id/AboutUs_Container_AboutUs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginVertical="30sp"
+            android:padding="20sp"
+            android:background="@drawable/custom_container_main_tips">
+
+            <TextView
+                android:id="@+id/AboutUs_Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3sp"
+                android:text="디버깅은 이런 서비스에요 !"
+                android:textSize="20sp"
+                android:fontFamily="@font/main_font_eb" />
+
+            <TextView
+                android:id="@+id/AboutUs_Description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7sp"
+                android:text="해충 없는 세상을 만들기 위한 서비스입니다. 해충 없는 세상을 만들기 위한 서비스입니다. 해충 없는 세상을 만들기 위한 서비스입니다. 해충 없는 세상을 만들기 위한 서비스입니다. 해충 없는 세상을 만들기 위한 서비스입니다. "
+                android:textSize="12sp"
+                android:fontFamily="@font/main_font_b" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/AboutUs_Btn_Charge"
+                android:layout_width="match_parent"
+                android:layout_height="80sp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginVertical="20sp"
+                android:background="@drawable/custom_button_grey">
+
+                <TextView
+                    android:id="@+id/AboutUs_Btn_Charge_Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80sp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/main_font_b"
+                    android:gravity="center"
+                    android:paddingLeft="30sp"
+                    android:paddingRight="10sp"
+                    android:text="요금제 안내"
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
+
+                <ImageView
+                    android:layout_width="80sp"
+                    android:layout_height="80sp"
+                    android:layout_gravity="right"
+                    android:src="@drawable/img_logo_transparent" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/AboutUs_Btn_Report"
+                android:layout_width="match_parent"
+                android:layout_height="80sp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginVertical="20sp"
+                android:background="@drawable/custom_button_grey">
+
+                <TextView
+                    android:id="@+id/AboutUs_Btn_Report_Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80sp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/main_font_b"
+                    android:gravity="center"
+                    android:paddingLeft="30sp"
+                    android:paddingRight="10sp"
+                    android:text="보고서 안내"
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
+
+                <ImageView
+                    android:layout_width="80sp"
+                    android:layout_height="80sp"
+                    android:layout_gravity="right"
+                    android:src="@drawable/img_logo_transparent" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/AboutUs_Btn_FAQ"
+                android:layout_width="match_parent"
+                android:layout_height="80sp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginVertical="20sp"
+                android:background="@drawable/custom_button_grey">
+
+                <TextView
+                    android:id="@+id/AboutUs_Btn_FAQ_Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80sp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/main_font_b"
+                    android:gravity="center"
+                    android:paddingLeft="30sp"
+                    android:paddingRight="10sp"
+                    android:text="문의 및 FAQ"
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
+
+                <ImageView
+                    android:layout_width="80sp"
+                    android:layout_height="80sp"
+                    android:layout_gravity="right"
+                    android:src="@drawable/img_logo_transparent" />
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
