@@ -10,12 +10,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Debugging">
         <activity
-            android:name=".LoginActivity"
+            android:name=".setting.MyPageActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.login.LoginActivity"
-            android:exported="true"
-            android:label="@string/title_activity_login" />
+            android:name=".register.RegisterActivity"
+            android:exported="true" />
+        <activity
+            android:name=".search.SearchActivity"
+            android:exported="true" />
+        <activity
+            android:name=".report.ReportActivity"
+            android:exported="true" />
+        <activity
+            android:name=".community.CommunityActivity"
+            android:exported="true" />
+        <activity
+            android:name=".aboutus.AboutUsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".login.LoginActivity"
+            android:exported="true" />
         <activity
             android:name=".SplashActivity"
             android:exported="true">
