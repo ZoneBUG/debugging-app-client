@@ -1,13 +1,13 @@
-package com.zonebug.debugging
+package com.zonebug.debugging.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.zonebug.debugging.aboutus.AboutUsActivity
-import com.zonebug.debugging.community.CommunityActivity
+import com.zonebug.debugging.activity.aboutus.AboutUsActivity
+import com.zonebug.debugging.activity.community.CommunityActivity
+import com.zonebug.debugging.activity.report.ReportActivity
+import com.zonebug.debugging.activity.search.SearchActivity
 import com.zonebug.debugging.databinding.ActivityMainBinding
-import com.zonebug.debugging.report.ReportActivity
-import com.zonebug.debugging.search.SearchActivity
 
 class MainActivity : AppCompatActivity() {
 

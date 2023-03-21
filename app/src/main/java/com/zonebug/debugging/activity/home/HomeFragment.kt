@@ -1,4 +1,4 @@
-package com.zonebug.debugging.home
+package com.zonebug.debugging.activity.home
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import com.zonebug.debugging.R
-import com.zonebug.debugging.login.LoginActivity
+import com.zonebug.debugging.activity.login.LoginActivity
 
 
 class HomeFragment : Fragment() {
