@@ -2,7 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zonebug.debugging">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
     <application
+        android:name=".App"
+        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -10,28 +15,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Debugging">
         <activity
-            android:name=".setting.MyPageActivity"
+            android:name="com.zonebug.debugging.activity.mypage.MyPageActivity"
             android:exported="true" />
         <activity
-            android:name=".register.RegisterActivity"
+            android:name="com.zonebug.debugging.activity.register.RegisterActivity"
             android:exported="true" />
         <activity
-            android:name=".search.SearchActivity"
+            android:name="com.zonebug.debugging.activity.search.SearchActivity"
             android:exported="true" />
         <activity
-            android:name=".report.ReportActivity"
+            android:name="com.zonebug.debugging.activity.report.ReportActivity"
             android:exported="true" />
         <activity
-            android:name=".community.CommunityActivity"
+            android:name="com.zonebug.debugging.activity.community.CommunityActivity"
             android:exported="true" />
         <activity
-            android:name=".aboutus.AboutUsActivity"
+            android:name="com.zonebug.debugging.activity.aboutus.AboutUsActivity"
             android:exported="true" />
         <activity
-            android:name=".login.LoginActivity"
+            android:name="com.zonebug.debugging.activity.login.LoginActivity"
             android:exported="true" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".activity.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,7 +45,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="true" />
     </application>
 

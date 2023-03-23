@@ -1,12 +1,12 @@
-package com.zonebug.debugging.report
+package com.zonebug.debugging.activity.aboutus
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.zonebug.debugging.R
 
-class ReportActivity : AppCompatActivity() {
+class AboutUsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_report)
+        setContentView(R.layout.activity_about_us)
     }
 }

@@ -1,11 +1,12 @@
-package com.zonebug.debugging
+package com.zonebug.debugging.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import com.zonebug.debugging.login.LoginActivity
+import com.zonebug.debugging.R
+import com.zonebug.debugging.activity.login.LoginActivity
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
