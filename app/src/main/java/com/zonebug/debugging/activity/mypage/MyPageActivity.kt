@@ -1,4 +1,4 @@
-package com.zonebug.debugging.activity.setting
+package com.zonebug.debugging.activity.mypage
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

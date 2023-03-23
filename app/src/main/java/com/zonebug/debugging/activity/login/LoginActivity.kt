@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import com.zonebug.debugging.App
 import com.zonebug.debugging.DTO.LoginRequestDTO
 import com.zonebug.debugging.DTO.TokenResponseDTO
 import com.zonebug.debugging.retrofit.RetrofitObject
@@ -48,6 +49,9 @@ class LoginActivity : AppCompatActivity() {
                 if(response.isSuccessful) {
                     val tokenResponseDTO = response.body()
                     Log.d("YMC", "____________________ onResponse Success " + tokenResponseDTO.toString())
+
+                    App.prefs.setString("accessToken", tokenResponseDTO!!.accessToken)
+                    App.prefs.setString("refreshToken", tokenResponseDTO!!.refreshToken)
 
                     intent = Intent(context, MainActivity::class.java)
                     startActivity(intent)

@@ -3,8 +3,11 @@ package com.zonebug.debugging.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import com.zonebug.debugging.App
 import com.zonebug.debugging.activity.aboutus.AboutUsActivity
 import com.zonebug.debugging.activity.community.CommunityActivity
+import com.zonebug.debugging.activity.mypage.MyPageActivity
 import com.zonebug.debugging.activity.report.ReportActivity
 import com.zonebug.debugging.activity.search.SearchActivity
 import com.zonebug.debugging.databinding.ActivityMainBinding
@@ -19,6 +22,14 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val accessToken = App.prefs.getString("accessToken", "")
+        Log.d("YMC", "+++++++++++++++++++++++++++++++++++ " + accessToken)
+
+        // My Page
+        binding.MainImgBtnMyPage.setOnClickListener {
+            intent = Intent(this, MyPageActivity::class.java)
+            startActivity(intent)
+        }
 
         // Report
         binding.MainBtnReport.setOnClickListener {
@@ -27,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Search
-        binding.MainBtnReport.setOnClickListener {
+        binding.MainBtnSearch.setOnClickListener {
             intent = Intent(this, SearchActivity::class.java)
             startActivity(intent)
         }
