@@ -5,10 +5,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import com.zonebug.debugging.App
-import com.zonebug.debugging.DTO.LoginRequestDTO
-import com.zonebug.debugging.DTO.TokenResponseDTO
+import com.zonebug.debugging.DTO.user.LoginRequestDTO
+import com.zonebug.debugging.DTO.user.TokenResponseDTO
 import com.zonebug.debugging.retrofit.RetrofitObject
 import com.zonebug.debugging.activity.MainActivity
 import com.zonebug.debugging.databinding.ActivityLoginBinding
