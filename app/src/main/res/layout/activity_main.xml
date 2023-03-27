@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:gravity="center"
+    android:background="#FFFFFF"
     tools:context=".activity.MainActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -12,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:background="@color/white"
+        android:elevation="5sp"
         app:titleTextColor="@color/black"
         app:layout_constraintTop_toTopOf="parent">
 

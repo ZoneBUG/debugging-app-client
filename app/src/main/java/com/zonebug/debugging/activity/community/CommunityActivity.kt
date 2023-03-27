@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.zonebug.debugging.App
+import com.zonebug.debugging.DTO.community.CommunityListDTO
 import com.zonebug.debugging.DTO.community.CommunityMainDTO
+import com.zonebug.debugging.activity.community.adapter.CommunityListRecyclerAdapter
 import com.zonebug.debugging.activity.community.adapter.CommunityRecyclerAdapter
 import com.zonebug.debugging.activity.login.LoginActivity
 import com.zonebug.debugging.databinding.ActivityCommunityBinding
@@ -24,6 +26,29 @@ class CommunityActivity : AppCompatActivity() {
         binding = ActivityCommunityBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        fetchMainList()
+
+
+        binding.CommunityMoreIssue.setOnClickListener {
+            intent = Intent(this, CommunityListActivity::class.java)
+            intent.putExtra("tag", "issue")
+            startActivity(intent)
+        }
+
+        binding.CommunityMoreAsk.setOnClickListener {
+            intent = Intent(this, CommunityListActivity::class.java)
+            intent.putExtra("tag", "ask")
+            startActivity(intent)
+        }
+
+        binding.CommunityMoreShare.setOnClickListener {
+            intent = Intent(this, CommunityListActivity::class.java)
+            intent.putExtra("tag", "share")
+            startActivity(intent)
+        }
+    }
+
+    private fun fetchMainList() {
         val service = RetrofitObject.getInstance()
         service!!.getCommunityMain().enqueue(object : Callback<CommunityMainDTO> {
             override fun onResponse(
@@ -32,9 +57,9 @@ class CommunityActivity : AppCompatActivity() {
             ) {
                 if(response.isSuccessful) {
                     val communityMainDTO = response.body()
+                    setAdapter("issue", communityMainDTO!!.issueList)
                     setAdapter("ask", communityMainDTO!!.askList)
                     setAdapter("share", communityMainDTO!!.shareList)
-
 
                 } else if(response.code() ==  401) {
                     App.prefs.setString("accessToken", "")
@@ -43,12 +68,9 @@ class CommunityActivity : AppCompatActivity() {
                     startActivity(intent)
                     finish()
 
-                } else{
+                } else {
                     Log.d("TAG", "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ " + response.isSuccessful)
-
                 }
-
-
             }
 
             override fun onFailure(call: Call<CommunityMainDTO>, t: Throwable) {
@@ -75,6 +97,5 @@ class CommunityActivity : AppCompatActivity() {
             binding.CommunityRVShare.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
             binding.CommunityRVShare.setHasFixedSize(true)
         }
-
     }
 }

@@ -1,6 +1,5 @@
 package com.zonebug.debugging.activity.community.adapter
 
-import android.content.Context
 import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
@@ -12,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.zonebug.debugging.DTO.community.CommunityMainDTO
 import com.zonebug.debugging.R
 import com.zonebug.debugging.activity.community.CommunityDetailActivity
-import java.util.*
 
 class CommunityRecyclerAdapter(private val mainPostList: List<CommunityMainDTO.MainPost>)
     : RecyclerView.Adapter<CommunityRecyclerAdapter.CustomViewHolder>() {
@@ -27,7 +25,7 @@ class CommunityRecyclerAdapter(private val mainPostList: List<CommunityMainDTO.M
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
         val mainPostItem : CommunityMainDTO.MainPost = mainPostList[position]
-        Log.d("tag", "=============================== " + mainPostItem.title.toString())
+
         if(mainPostItem.title.length > 20) holder.title.text = mainPostItem.title.substring(0, 20) + "..."
         else holder.title.text = mainPostItem.title
 

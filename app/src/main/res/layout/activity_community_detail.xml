@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".activity.community.CommunityDetailActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -11,11 +12,12 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:background="@color/white"
+        android:elevation="5sp"
         app:titleTextColor="@color/black"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/Toolbar_Community_Text"
+            android:id="@+id/Toolbar_Community_Detail_Text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
@@ -26,5 +28,19 @@
             android:fontFamily="@font/main_font_sb"/>
 
     </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="70dp"
+        android:paddingVertical="20sp"
+        android:paddingHorizontal="35sp"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

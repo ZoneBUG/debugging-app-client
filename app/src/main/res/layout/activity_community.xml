@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".activity.community.CommunityActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -11,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:background="@color/white"
+        android:elevation="5sp"
         app:titleTextColor="@color/black"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -33,18 +35,11 @@
         android:orientation="vertical"
         android:layout_marginTop="70dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginBottom="20sp"
-            android:text="여러분의 이야기를 들려주세요!" />
-
-
         <LinearLayout
             android:id="@+id/Community_Container_Banner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
             android:orientation="vertical">
 
             <ImageView
@@ -52,8 +47,8 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/img_banner" />
 
-
         </LinearLayout>
+
 
         <LinearLayout
             android:id="@+id/Community_Container"
@@ -92,6 +87,7 @@
 
 
                     <TextView
+                        android:id="@+id/Community_More_Issue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -142,6 +138,7 @@
 
 
                     <TextView
+                        android:id="@+id/Community_More_Ask"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -192,6 +189,7 @@
 
 
                     <TextView
+                        android:id="@+id/Community_More_Share"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
