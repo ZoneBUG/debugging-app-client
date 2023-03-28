@@ -1,7 +1,6 @@
-package com.zonebug.debugging.activity.community.adapter
+package com.zonebug.debugging.activity.community.main
 
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +9,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.zonebug.debugging.DTO.community.CommunityMainDTO
 import com.zonebug.debugging.R
-import com.zonebug.debugging.activity.community.CommunityDetailActivity
+import com.zonebug.debugging.activity.community.detail.CommunityDetailActivity
 
 class CommunityRecyclerAdapter(private val mainPostList: List<CommunityMainDTO.MainPost>)
     : RecyclerView.Adapter<CommunityRecyclerAdapter.CustomViewHolder>() {

@@ -15,10 +15,10 @@
         android:theme="@style/Theme.Debugging"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".activity.community.CommunityListActivity"
+            android:name=".activity.community.list.CommunityListActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.community.CommunityDetailActivity"
+            android:name=".activity.community.detail.CommunityDetailActivity"
             android:exported="true" />
         <activity
             android:name=".activity.mypage.MyPageActivity"
@@ -33,7 +33,7 @@
             android:name=".activity.report.ReportActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.community.CommunityActivity"
+            android:name=".activity.community.main.CommunityActivity"
             android:exported="true" />
         <activity
             android:name=".activity.aboutus.AboutUsActivity"

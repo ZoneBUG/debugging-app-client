@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.community.CommunityListActivity">
+    tools:context=".activity.community.list.CommunityListActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/Toolbar_Community_List"

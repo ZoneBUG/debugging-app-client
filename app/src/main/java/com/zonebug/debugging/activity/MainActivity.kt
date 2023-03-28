@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import com.zonebug.debugging.App
 import com.zonebug.debugging.activity.aboutus.AboutUsActivity
-import com.zonebug.debugging.activity.community.CommunityActivity
+import com.zonebug.debugging.activity.community.main.CommunityActivity
 import com.zonebug.debugging.activity.mypage.MyPageActivity
 import com.zonebug.debugging.activity.report.ReportActivity
 import com.zonebug.debugging.activity.search.SearchActivity
