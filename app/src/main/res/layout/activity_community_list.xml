@@ -40,12 +40,35 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/Community_List_RV"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:layout_marginHorizontal="5sp"
             android:paddingVertical="10sp"
             android:paddingHorizontal="20sp"
             android:background="@drawable/container_community_main"
             android:elevation="5sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
+            android:orientation="vertical"
+            android:layout_gravity="bottom"
+            android:gravity="bottom">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/Community_List_Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
+                android:paddingVertical="3sp"
+                android:background="@drawable/custom_button_red"
+                android:text="글 작성하기"
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/main_font_sb" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

@@ -4,18 +4,16 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.zonebug.debugging.App
 import com.zonebug.debugging.DTO.community.CommunityListDTO
+import com.zonebug.debugging.activity.community.write.CommunityWriteActivity
 import com.zonebug.debugging.activity.login.LoginActivity
 import com.zonebug.debugging.databinding.ActivityCommunityListBinding
-import com.zonebug.debugging.retrofit.RetrofitObject
 import com.zonebug.debugging.retrofit.RetrofitRepository
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class CommunityListActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCommunityListBinding
@@ -27,15 +25,22 @@ class CommunityListActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val tag = intent.getStringExtra("tag")
-        if(tag!! == "issue") binding.ToolbarCommunityListText.text = "오늘의 Issue"
-        else if(tag!! == "ask") binding.ToolbarCommunityListText.text = "궁금해요!"
-        else if(tag!! == "share") binding.ToolbarCommunityListText.text = "공유해요!"
+        var tag_title = ""
+        when {
+            tag!! == "issue" -> {
+                tag_title = "오늘의 Issue"
+                binding.CommunityListButton.visibility = View.GONE
+            }
+            tag!! == "ask" -> tag_title = "궁금해요!"
+            tag!! == "share" -> tag_title = "공유해요!"
+        }
+        binding.ToolbarCommunityListText.text = tag_title
 
         val repository = RetrofitRepository
         val viewModelFactory = CommunityListViewModelFactory(repository)
 
         viewModel = ViewModelProvider(this, viewModelFactory).get(CommunityListViewModel::class.java)
-        viewModel.getCommunityList(tag, 0)
+        viewModel.getCommunityList(tag!!, 0)
         viewModel.myResponse.observe(this, Observer {
             if(it.isSuccessful) {
                 val communityListDTO = it.body()!!
@@ -53,6 +58,14 @@ class CommunityListActivity : AppCompatActivity() {
 
             }
         })
+
+
+        // 글 작성하기
+        binding.CommunityListButton.setOnClickListener {
+            intent = Intent(this@CommunityListActivity, CommunityWriteActivity::class.java)
+            intent.putExtra("tag_title", tag_title)
+            startActivity(intent)
+        }
     }
 
     private fun setListAdapter(postList: List<CommunityListDTO.ListPost>) {

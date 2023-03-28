@@ -10,15 +10,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.zonebug.debugging.App
 import com.zonebug.debugging.DTO.community.CommunityMainDTO
 import com.zonebug.debugging.activity.community.list.CommunityListActivity
-import com.zonebug.debugging.activity.community.list.CommunityListViewModel
-import com.zonebug.debugging.activity.community.list.CommunityListViewModelFactory
 import com.zonebug.debugging.activity.login.LoginActivity
 import com.zonebug.debugging.databinding.ActivityCommunityBinding
-import com.zonebug.debugging.retrofit.RetrofitObject
 import com.zonebug.debugging.retrofit.RetrofitRepository
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class CommunityActivity : AppCompatActivity() {
 

@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Debugging"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activity.community.write.CommunityWriteActivity"
+            android:exported="true" />
+        <activity
             android:name=".activity.community.list.CommunityListActivity"
             android:exported="true" />
         <activity
