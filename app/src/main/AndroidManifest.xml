@@ -16,6 +16,7 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".activity.community.write.CommunityWriteActivity"
+            android:windowSoftInputMode="adjustPan"
             android:exported="true" />
         <activity
             android:name=".activity.community.list.CommunityListActivity"
@@ -43,6 +44,7 @@
             android:exported="true" />
         <activity
             android:name=".activity.login.LoginActivity"
+            android:windowSoftInputMode="adjustPan"
             android:exported="true" />
         <activity
             android:name=".activity.SplashActivity"

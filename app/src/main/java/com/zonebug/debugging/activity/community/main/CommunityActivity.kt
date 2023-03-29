@@ -19,35 +19,18 @@ class CommunityActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCommunityBinding
     private lateinit var viewModel: CommunityViewModel
 
+    override fun onRestart() {
+        super.onRestart()
+        fetchLists()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCommunityBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val repository = RetrofitRepository
-        val viewModelFactory = CommunityViewModelFactory(repository)
-
-        viewModel = ViewModelProvider(this, viewModelFactory).get(CommunityViewModel::class.java)
-        viewModel.getCommunityMain()
-        viewModel.myResponse.observe(this, Observer {
-            if(it.isSuccessful) {
-                val communityMainDTO = it.body()!!
-                setAdapter("issue", communityMainDTO.issueList)
-                setAdapter("ask", communityMainDTO.askList)
-                setAdapter("share", communityMainDTO.shareList)
-
-            } else if(it.code() ==  401) {
-                App.prefs.setString("accessToken", "")
-                App.prefs.setString("refreshToken", "")
-                intent = Intent(this@CommunityActivity, LoginActivity::class.java)
-                startActivity(intent)
-                finish()
-
-            } else {
-                Log.d("TAG", "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ " + it.isSuccessful)
-
-            }
-        })
+        // 리스트들 불러오기
+        fetchLists()
 
 
         binding.CommunityMoreIssue.setOnClickListener {
@@ -67,6 +50,37 @@ class CommunityActivity : AppCompatActivity() {
             intent.putExtra("tag", "share")
             startActivity(intent)
         }
+    }
+
+    private fun fetchLists() {
+        val repository = RetrofitRepository
+        val viewModelFactory = CommunityViewModelFactory(repository)
+
+        viewModel = ViewModelProvider(this, viewModelFactory).get(CommunityViewModel::class.java)
+        viewModel.getCommunityMain()
+        viewModel.myResponse.observe(this, Observer {
+            when {
+                it.isSuccessful -> {
+                    val communityMainDTO = it.body()!!
+                    setAdapter("issue", communityMainDTO.issueList)
+                    setAdapter("ask", communityMainDTO.askList)
+                    setAdapter("share", communityMainDTO.shareList)
+
+                }
+                it.code() ==  401 -> {
+                    App.prefs.setString("accessToken", "")
+                    App.prefs.setString("refreshToken", "")
+                    intent = Intent(this@CommunityActivity, LoginActivity::class.java)
+                    startActivity(intent)
+                    finish()
+
+                }
+                else -> {
+                    Log.d("TAG", "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ " + it.isSuccessful)
+
+                }
+            }
+        })
     }
 
     private fun setAdapter(tag: String, postList: List<CommunityMainDTO.MainPost>) {

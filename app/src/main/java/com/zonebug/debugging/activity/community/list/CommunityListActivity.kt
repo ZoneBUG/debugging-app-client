@@ -19,6 +19,13 @@ class CommunityListActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCommunityListBinding
     private lateinit var viewModel: CommunityListViewModel
 
+    override fun onRestart() {
+        super.onRestart()
+        val tag = intent.getStringExtra("tag")
+        Log.d("TAG", "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR ")
+        fetchList(tag!!)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCommunityListBinding.inflate(layoutInflater)
@@ -36,36 +43,47 @@ class CommunityListActivity : AppCompatActivity() {
         }
         binding.ToolbarCommunityListText.text = tag_title
 
+
+        // 리스트 불러오기
+        fetchList(tag!!)
+
+
+        // 글 작성하기
+        binding.CommunityListButton.setOnClickListener {
+            intent = Intent(this@CommunityListActivity, CommunityWriteActivity::class.java)
+            intent.putExtra("tag", tag)
+            intent.putExtra("tag_title", tag_title)
+            startActivity(intent)
+        }
+    }
+
+    private fun fetchList(tag: String) {
         val repository = RetrofitRepository
         val viewModelFactory = CommunityListViewModelFactory(repository)
 
         viewModel = ViewModelProvider(this, viewModelFactory).get(CommunityListViewModel::class.java)
         viewModel.getCommunityList(tag!!, 0)
         viewModel.myResponse.observe(this, Observer {
-            if(it.isSuccessful) {
-                val communityListDTO = it.body()!!
-                setListAdapter(communityListDTO.postList)
+            when {
+                it.isSuccessful -> {
+                    val communityListDTO = it.body()!!
+                    setListAdapter(communityListDTO.postList)
 
-            } else if(it.code() ==  401) {
-                App.prefs.setString("accessToken", "")
-                App.prefs.setString("refreshToken", "")
-                intent = Intent(this@CommunityListActivity, LoginActivity::class.java)
-                startActivity(intent)
-                finish()
+                }
+                it.code() ==  401 -> {
+                    App.prefs.setString("accessToken", "")
+                    App.prefs.setString("refreshToken", "")
+                    intent = Intent(this@CommunityListActivity, LoginActivity::class.java)
+                    startActivity(intent)
+                    finish()
 
-            } else {
-                Log.d("TAG", "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ " + it.isSuccessful)
+                }
+                else -> {
+                    Log.d("TAG", "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ " + it.isSuccessful)
 
+                }
             }
         })
-
-
-        // 글 작성하기
-        binding.CommunityListButton.setOnClickListener {
-            intent = Intent(this@CommunityListActivity, CommunityWriteActivity::class.java)
-            intent.putExtra("tag_title", tag_title)
-            startActivity(intent)
-        }
     }
 
     private fun setListAdapter(postList: List<CommunityListDTO.ListPost>) {

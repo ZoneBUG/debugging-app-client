@@ -1,11 +1,8 @@
 package com.zonebug.debugging.retrofit
 
-import com.zonebug.debugging.DTO.community.CommunityDetailDTO
-import com.zonebug.debugging.DTO.community.CommunityListDTO
-import com.zonebug.debugging.DTO.community.CommunityMainDTO
+import com.zonebug.debugging.DTO.community.*
 import com.zonebug.debugging.DTO.user.LoginRequestDTO
 import com.zonebug.debugging.DTO.user.TokenResponseDTO
-import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -30,4 +27,9 @@ interface RetrofitService {
     suspend fun getPost(
         @Path("postId") postId: Long,
     ) : Response<CommunityDetailDTO>
+
+    @POST("community/post")
+    suspend fun writePost(
+        @Body communityWriteRequestDTO: CommunityWriteRequestDTO
+    ) : Response<CommunityWriteResponseDTO>
 }

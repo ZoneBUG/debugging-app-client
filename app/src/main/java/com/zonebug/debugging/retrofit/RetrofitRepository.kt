@@ -1,8 +1,6 @@
 package com.zonebug.debugging.retrofit
 
-import com.zonebug.debugging.DTO.community.CommunityDetailDTO
-import com.zonebug.debugging.DTO.community.CommunityListDTO
-import com.zonebug.debugging.DTO.community.CommunityMainDTO
+import com.zonebug.debugging.DTO.community.*
 import com.zonebug.debugging.DTO.user.LoginRequestDTO
 import com.zonebug.debugging.DTO.user.TokenResponseDTO
 import retrofit2.Response
@@ -23,5 +21,9 @@ object RetrofitRepository {
 
     suspend fun getPost(postId: Long) : Response<CommunityDetailDTO> {
         return RetrofitObject.api.getPost(postId)
+    }
+
+    suspend fun writePost(communityWriteRequestDTO: CommunityWriteRequestDTO) : Response<CommunityWriteResponseDTO> {
+        return RetrofitObject.api.writePost(communityWriteRequestDTO)
     }
 }
