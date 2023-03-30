@@ -22,7 +22,6 @@ class CommunityListActivity : AppCompatActivity() {
     override fun onRestart() {
         super.onRestart()
         val tag = intent.getStringExtra("tag")
-        Log.d("TAG", "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR ")
         fetchList(tag!!)
     }
 

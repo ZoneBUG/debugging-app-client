@@ -43,14 +43,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="1.5"
             android:orientation="vertical">
 
             <EditText
                 android:id="@+id/Community_Write_Input_Title"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="7"
+                android:layout_weight="6"
                 android:layout_marginBottom="20sp"
                 android:paddingVertical="5sp"
                 android:paddingHorizontal="15sp"
@@ -88,7 +88,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/Community_Write_Button_Photo"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="32dp"
                 android:layout_marginBottom="10sp"
                 android:text="사진 첨부"
                 android:textColor="@color/main_red"
@@ -109,8 +109,8 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/Community_Write_Button_Fin"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="4"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5sp"
                 android:padding="10sp"
                 android:background="@drawable/custom_button_red"
                 android:backgroundTint="@color/main_red"

@@ -3,7 +3,7 @@ package com.zonebug.debugging.DTO.community
 import java.util.*
 
 data class CommunityDetailDTO(
-    val commentList: List<Comment>,
+    val commentList: ArrayList<Comment>,
     val post: DetailPost
 ){
     data class DetailPost(

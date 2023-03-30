@@ -26,4 +26,8 @@ object RetrofitRepository {
     suspend fun writePost(communityWriteRequestDTO: CommunityWriteRequestDTO) : Response<CommunityWriteResponseDTO> {
         return RetrofitObject.api.writePost(communityWriteRequestDTO)
     }
+
+    suspend fun writeComment(communityDetailCommentDTO: CommunityDetailCommentDTO) : Response<CommunityDetailCommentResponseDTO> {
+        return RetrofitObject.api.writeComment(communityDetailCommentDTO)
+    }
 }

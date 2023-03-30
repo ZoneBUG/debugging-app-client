@@ -32,4 +32,9 @@ interface RetrofitService {
     suspend fun writePost(
         @Body communityWriteRequestDTO: CommunityWriteRequestDTO
     ) : Response<CommunityWriteResponseDTO>
+
+    @POST("community/comment")
+    suspend fun writeComment(
+        @Body communityDetailCommentDTO: CommunityDetailCommentDTO
+    ) : Response<CommunityDetailCommentResponseDTO>
 }
