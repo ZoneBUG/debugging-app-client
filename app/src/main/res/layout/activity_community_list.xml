@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.community.list.CommunityListActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/Toolbar_Community_List"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/white"
+        android:elevation="5sp"
+        app:titleTextColor="@color/black"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/Toolbar_Community_List_Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:lineSpacingExtra="3.3sp"
+            android:layout_gravity="center_horizontal"
+            android:text="Zone - Talk"
+            android:textSize="25sp"
+            android:fontFamily="@font/main_font_sb"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/Community_List_Container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="70dp"
+        android:paddingHorizontal="20sp"
+        android:paddingVertical="20sp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/Community_List_RV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="5sp"
+            android:paddingVertical="10sp"
+            android:paddingHorizontal="20sp"
+            android:background="@drawable/container_community_main"
+            android:elevation="5sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
+            android:orientation="vertical"
+            android:layout_gravity="bottom"
+            android:gravity="bottom">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/Community_List_Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
+                android:layout_marginBottom="5sp"
+                android:paddingVertical="3sp"
+                android:background="@drawable/custom_button_red"
+                android:text="글 작성하기"
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/main_font_sb" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.community.write.CommunityWriteActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/Toolbar_Community_Write"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/white"
+        android:elevation="5sp"
+        app:titleTextColor="@color/black"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/Toolbar_Community_Write_Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:lineSpacingExtra="3.3sp"
+            android:layout_gravity="center_horizontal"
+            android:text="글 작성하기"
+            android:textSize="25sp"
+            android:fontFamily="@font/main_font_sb"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/Community_Write_Container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="70dp"
+        android:paddingVertical="20sp"
+        android:paddingHorizontal="35sp"
+        android:orientation="vertical">
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/Community_Write_Input_Title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="6"
+                android:layout_marginBottom="20sp"
+                android:paddingVertical="5sp"
+                android:paddingHorizontal="15sp"
+                android:background="@drawable/custom_input"
+                android:hint="제목을 입력해주세요"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/main_font_r" />
+
+
+            <EditText
+                android:id="@+id/Community_Write_Input_Contents"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="12sp"
+                android:layout_weight="1"
+                android:background="@drawable/custom_input"
+                android:fontFamily="@font/main_font_r"
+                android:gravity="top"
+                android:hint="내용을 입력해주세요"
+                android:paddingHorizontal="15sp"
+                android:paddingVertical="20sp"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
+            android:orientation="horizontal"
+            android:gravity="right">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/Community_Write_Button_Photo"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_marginBottom="10sp"
+                android:text="사진 첨부"
+                android:textColor="@color/main_red"
+                android:textSize="15sp"
+                android:fontFamily="@font/main_font_sb"
+                android:background="@drawable/custom_button_white_red" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
+            android:orientation="horizontal"
+            android:layout_gravity="bottom"
+            android:gravity="bottom">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/Community_Write_Button_Fin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5sp"
+                android:padding="10sp"
+                android:background="@drawable/custom_button_red"
+                android:backgroundTint="@color/main_red"
+                android:text="등록하기"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                android:fontFamily="@font/main_font_sb" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

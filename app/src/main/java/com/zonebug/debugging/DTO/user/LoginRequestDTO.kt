@@ -1,4 +1,4 @@
-package com.zonebug.debugging.DTO
+package com.zonebug.debugging.DTO.user
 
 data class LoginRequestDTO(
     var email : String,

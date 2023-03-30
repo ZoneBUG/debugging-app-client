@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.community.CommunityActivity">
+    android:background="#FFFFFF"
+    tools:context=".activity.community.main.CommunityActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/Toolbar_Community"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:background="@color/white"
+        android:elevation="5sp"
         app:titleTextColor="@color/black"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -30,16 +32,189 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
         android:orientation="vertical"
-        android:layout_marginTop="70dp"
-        android:paddingHorizontal="45sp">
+        android:layout_marginTop="70dp">
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/Community_Container_Banner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="여러분의 이야기를 들려주세요!" />
+            android:layout_marginTop="20sp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/img_banner" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/Community_Container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="10sp"
+            android:paddingHorizontal="20sp"
+            android:paddingVertical="10sp">
+
+            <LinearLayout
+                android:id="@+id/Community_Container_Issue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginBottom="10sp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8sp"
+                    android:paddingHorizontal="12sp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:layout_gravity="center"
+                        android:text="오늘의 Issue"
+                        android:textSize="20sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/main_font_b" />
+
+
+                    <TextView
+                        android:id="@+id/Community_More_Issue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:gravity="right"
+                        android:text="더보기 >"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/main_font_l" />
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/Community_RV_Issue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5sp"
+                    android:paddingVertical="9sp"
+                    android:background="@drawable/container_community_main"
+                    android:elevation="5sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/Community_Container_Ask"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginBottom="10sp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8sp"
+                    android:paddingHorizontal="12sp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:layout_gravity="center"
+                        android:text="궁금해요!"
+                        android:textSize="20sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/main_font_b" />
+
+
+                    <TextView
+                        android:id="@+id/Community_More_Ask"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="right"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/white"
+                        android:fontFamily="@font/main_font_l"
+                        android:text="더보기 >"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/Community_RV_Ask"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5sp"
+                    android:paddingVertical="9sp"
+                    android:background="@drawable/container_community_main"
+                    android:elevation="5sp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/Community_Container_Share"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginBottom="10sp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8sp"
+                    android:paddingHorizontal="12sp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:layout_gravity="center"
+                        android:text="공유해요!"
+                        android:textSize="20sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/main_font_b" />
+
+
+                    <TextView
+                        android:id="@+id/Community_More_Share"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="right"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/white"
+                        android:fontFamily="@font/main_font_l"
+                        android:text="더보기 >"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/Community_RV_Share"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5sp"
+                    android:paddingVertical="9sp"
+                    android:background="@drawable/container_community_main"
+                    android:elevation="5sp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
 
     </LinearLayout>
 

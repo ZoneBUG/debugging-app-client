@@ -10,11 +10,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.io.IOException
 
 object RetrofitObject {
-    private val okHttpClient = OkHttpClient.Builder().addInterceptor(AppInterceptor()).build()
 
     private val retrofit = Retrofit.Builder()
-        .baseUrl("http://172.30.1.85:8080/")
-        .client(okHttpClient)
+//        .baseUrl("http://172.30.1.85:8080/")
+        .baseUrl("http://15.164.56.217/")
+        .client(okHttpClient(AppInterceptor()))
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
@@ -39,7 +39,7 @@ object RetrofitObject {
             val accessToken = App.prefs.getString("accessToken", "")
 
             val newRequest = request().newBuilder()
-                .addHeader("Authorization", accessToken)
+                .addHeader("Authorization", "Bearer " + accessToken)
                 .build()
 
             return chain.proceed(newRequest)

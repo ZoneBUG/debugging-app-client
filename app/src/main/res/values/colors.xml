@@ -11,4 +11,6 @@
     <color name="main_yellow">#E0A203</color>
     <color name="main_green">#419500</color>
     <color name="main_grey">#8E8E8E</color>
+    <color name="main_grey2">#CFCFCF</color>
+    <color name="community_background">#F9F9F9</color>
 </resources>

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".activity.community.detail.CommunityDetailActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/Toolbar_Community"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/white"
+        android:elevation="5sp"
+        app:titleTextColor="@color/black"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/Toolbar_Community_Detail_Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:lineSpacingExtra="3.3sp"
+            android:layout_gravity="center_horizontal"
+            android:text="Zone - Talk"
+            android:textSize="25sp"
+            android:fontFamily="@font/main_font_sb"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/Community_Detail_Container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="70dp"
+        android:paddingVertical="20sp"
+        android:paddingHorizontal="35sp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/Community_Detail_Info_Container_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="7sp"
+                android:gravity="fill_horizontal" >
+
+                <TextView
+                    android:id="@+id/Community_Detail_Info_Nickname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="닉네임"
+                    android:textColor="@color/main_red"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/main_font_b" />
+
+                <TextView
+                    android:id="@+id/Community_Detail_Info_Date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10sp"
+                    android:text="Mar 21"
+                    android:textColor="@color/main_grey"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/main_font_l" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/Community_Detail_Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="테스트용 제목입니다 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/main_font_sb" />
+
+            <LinearLayout
+                android:id="@+id/Community_Detail_Info_Container_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="5sp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/Community_Detail_Info_Hits"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10sp"
+                        android:text="조회수 (12)"
+                        android:textColor="@color/main_grey2"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/main_font_m" />
+
+                    <TextView
+                        android:id="@+id/Community_Detail_Info_Comments"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="댓글 (1)"
+                        android:textColor="@color/main_grey2"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/main_font_m" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/Community_Detail_Edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="right"
+                    android:paddingRight="3sp"
+                    android:text="[수정하기]"
+                    android:textColor="@color/main_grey"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/main_font_l"
+                    android:visibility="visible"/>
+
+            </LinearLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/Community_Detail_Contents"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:paddingVertical="10sp"
+                    android:lineSpacingExtra="3.5dp"
+                    android:text="테스트용 내용입니다 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/main_font_l" />
+
+            </ScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="16sp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="댓글"
+                    android:textSize="20sp"
+                    android:textColor="@color/main_red"
+                    android:fontFamily="@font/main_font_eb" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1sp"
+                    android:layout_marginVertical="3sp"
+                    android:background="@color/main_red" />
+
+                <TextView
+                    android:id="@+id/Community_Detail_Text_No_Comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="7sp"
+                    android:paddingLeft="2sp"
+                    android:text="작성된 댓글이 없습니다."
+                    android:textSize="15sp"
+                    android:visibility="visible" />
+
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/Community_Detail_RV_Comment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </ScrollView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="12"
+            android:orientation="horizontal"
+            android:layout_gravity="bottom"
+            android:gravity="bottom">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Community_Detail_Comment_Input"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingLeft="10sp"
+                android:background="@drawable/custom_input"
+                android:hint="댓글을 입력하세요"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/Community_Detail_Comment_Btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:background="@drawable/custom_button_red"
+                android:backgroundTint="@color/main_red"
+                android:text="등록"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                android:fontFamily="@font/main_font_sb" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

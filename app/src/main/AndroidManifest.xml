@@ -3,37 +3,49 @@
     package="com.zonebug.debugging">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".App"
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/img_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/img_logo"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Debugging">
+        android:theme="@style/Theme.Debugging"
+        android:usesCleartextTraffic="true">
         <activity
-            android:name="com.zonebug.debugging.activity.mypage.MyPageActivity"
+            android:name=".activity.community.write.CommunityWriteActivity"
+            android:windowSoftInputMode="adjustResize"
             android:exported="true" />
         <activity
-            android:name="com.zonebug.debugging.activity.register.RegisterActivity"
+            android:name=".activity.community.list.CommunityListActivity"
             android:exported="true" />
         <activity
-            android:name="com.zonebug.debugging.activity.search.SearchActivity"
+            android:name=".activity.community.detail.CommunityDetailActivity"
+            android:windowSoftInputMode="adjustResize"
             android:exported="true" />
         <activity
-            android:name="com.zonebug.debugging.activity.report.ReportActivity"
+            android:name=".activity.mypage.MyPageActivity"
             android:exported="true" />
         <activity
-            android:name="com.zonebug.debugging.activity.community.CommunityActivity"
+            android:name=".activity.register.RegisterActivity"
             android:exported="true" />
         <activity
-            android:name="com.zonebug.debugging.activity.aboutus.AboutUsActivity"
+            android:name=".activity.search.SearchActivity"
             android:exported="true" />
         <activity
-            android:name="com.zonebug.debugging.activity.login.LoginActivity"
+            android:name=".activity.report.ReportActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.community.main.CommunityActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.aboutus.AboutUsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.login.LoginActivity"
+            android:windowSoftInputMode="adjustResize"
             android:exported="true" />
         <activity
             android:name=".activity.SplashActivity"
