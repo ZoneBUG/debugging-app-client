@@ -177,6 +177,7 @@
                     android:paddingLeft="2sp"
                     android:text="작성된 댓글이 없습니다."
                     android:textSize="15sp"
+                    android:textColor="@color/main_grey"
                     android:visibility="visible" />
 
 
@@ -210,8 +211,11 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:paddingLeft="10sp"
+                android:paddingVertical="3sp"
                 android:background="@drawable/custom_input"
-                android:hint="댓글을 입력하세요"/>
+                android:hint="댓글을 입력하세요"
+                android:textColorHint="@color/main_grey2"
+                android:textColor="@color/black"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/Community_Detail_Comment_Btn"
