@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.zonebug.debugging.App
 import com.zonebug.debugging.DTO.user.LoginRequestDTO
 import com.zonebug.debugging.activity.MainActivity
+import com.zonebug.debugging.activity.register.RegisterActivity
 import com.zonebug.debugging.databinding.ActivityLoginBinding
 import com.zonebug.debugging.retrofit.RetrofitRepository
 
@@ -29,6 +30,12 @@ class LoginActivity : AppCompatActivity() {
         }
 
 
+        // Register
+        binding.LoginTextRegister.setOnClickListener {
+            intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     fun login(context : Context) {

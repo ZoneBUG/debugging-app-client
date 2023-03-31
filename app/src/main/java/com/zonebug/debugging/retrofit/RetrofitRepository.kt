@@ -2,10 +2,16 @@ package com.zonebug.debugging.retrofit
 
 import com.zonebug.debugging.DTO.community.*
 import com.zonebug.debugging.DTO.user.LoginRequestDTO
+import com.zonebug.debugging.DTO.user.RegisterRequestDTO
+import com.zonebug.debugging.DTO.user.RegisterResponseDTO
 import com.zonebug.debugging.DTO.user.TokenResponseDTO
 import retrofit2.Response
 
 object RetrofitRepository {
+
+    suspend fun signUp(registerRequestDTO: RegisterRequestDTO) : Response<RegisterResponseDTO> {
+        return RetrofitObject.api.signUp(registerRequestDTO)
+    }
 
     suspend fun signIn(loginRequestDTO: LoginRequestDTO) : Response<TokenResponseDTO> {
         return RetrofitObject.api.signIn(loginRequestDTO)

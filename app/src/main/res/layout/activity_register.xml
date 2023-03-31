@@ -29,4 +29,196 @@
 
     </androidx.appcompat.widget.Toolbar>
 
+    <LinearLayout
+        android:id="@+id/Register_Container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="70dp"
+        android:paddingHorizontal="35sp">
+
+        <LinearLayout
+            android:id="@+id/Register_Container_Input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/Register_Container_Email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="20sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/Register_Container_Title_Email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8sp"
+                    android:fontFamily="@font/main_font_b"
+                    android:text="이메일"
+                    android:textColor="@color/main_red"
+                    android:textSize="18sp"
+                    android:inputType="textEmailAddress"/>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/Register_Container_Input_Email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10sp"
+                    android:paddingVertical="20sp"
+                    android:background="@drawable/custom_input"
+                    android:hint="이메일을 입력하세요"
+                    android:textColorHint="@color/main_grey2"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/main_font_m"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/Register_Container_Pw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="20sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/Register_Container_Title_Pw"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8sp"
+                    android:text="비밀번호"
+                    android:textColor="@color/main_red"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/main_font_b" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/Register_Container_Input_Pw"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10sp"
+                    android:paddingVertical="20sp"
+                    android:background="@drawable/custom_input"
+                    android:hint="비밀번호를 입력하세요"
+                    android:textColorHint="@color/main_grey2"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/main_font_m"
+                    android:inputType="textPassword"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/Register_Container_Nickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="20sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/Register_Container_Title_Nickname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8sp"
+                    android:text="닉네임"
+                    android:textColor="@color/main_red"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/main_font_b" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/Register_Container_Input_Nickname"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:paddingLeft="10sp"
+                        android:paddingVertical="20sp"
+                        android:background="@drawable/custom_input"
+                        android:hint="닉네임을 입력하세요"
+                        android:textColorHint="@color/main_grey2"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/main_font_m" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/Register_Container_Btn_Nickname"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:background="@drawable/custom_button_white_red"
+                        android:text="중복 확인"
+                        android:textColor="@color/main_red"
+                        android:fontFamily="@font/main_font_b"
+                        android:layout_marginLeft="8sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Register_Container_Period"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="20sp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/Register_Container_Title_Period"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginBottom="8sp"
+                        android:text="기간 설정"
+                        android:textColor="@color/main_red"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/main_font_b" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/Register_Container_Input_Period"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10sp"
+                        android:paddingVertical="20sp"
+                        android:background="@drawable/custom_input"
+                        android:hint="기간을 입력하세요"
+                        android:textColorHint="@color/main_grey2"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/main_font_m"
+                        android:inputType="number"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/Register_Container_Btn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="7">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/Register_Btn_Fin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3sp"
+                android:background="@drawable/custom_button_red"
+                android:text="회원가입 완료하기"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:fontFamily="@font/main_font_sb" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
