@@ -2,11 +2,18 @@ package com.zonebug.debugging.retrofit
 
 import com.zonebug.debugging.DTO.community.*
 import com.zonebug.debugging.DTO.user.LoginRequestDTO
+import com.zonebug.debugging.DTO.user.RegisterRequestDTO
+import com.zonebug.debugging.DTO.user.RegisterResponseDTO
 import com.zonebug.debugging.DTO.user.TokenResponseDTO
 import retrofit2.Response
 import retrofit2.http.*
 
 interface RetrofitService {
+
+    @POST("user/signup")
+    suspend fun signUp(
+        @Body registerRequestDTO: RegisterRequestDTO
+    ) : Response<RegisterResponseDTO>
 
     @POST("user/signin")
     suspend fun signIn(

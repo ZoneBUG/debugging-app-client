@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".activity.community.write.CommunityWriteActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -56,6 +57,7 @@
                 android:paddingHorizontal="15sp"
                 android:background="@drawable/custom_input"
                 android:hint="제목을 입력해주세요"
+                android:textColorHint="@color/main_grey2"
                 android:textSize="18sp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/main_font_r" />
@@ -71,6 +73,7 @@
                 android:fontFamily="@font/main_font_r"
                 android:gravity="top"
                 android:hint="내용을 입력해주세요"
+                android:textColorHint="@color/main_grey2"
                 android:paddingHorizontal="15sp"
                 android:paddingVertical="20sp"
                 android:textColor="@color/black"
