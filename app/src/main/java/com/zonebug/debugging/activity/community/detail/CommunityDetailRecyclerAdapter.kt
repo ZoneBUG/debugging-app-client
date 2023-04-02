@@ -1,15 +1,25 @@
 package com.zonebug.debugging.activity.community.detail
 
 import android.content.Context
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.widget.AppCompatButton
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.zonebug.debugging.App
+import com.zonebug.debugging.DTO.community.CommunityDetailCommentDTO
 import com.zonebug.debugging.R
+import com.zonebug.debugging.activity.login.LoginActivity
+import com.zonebug.debugging.retrofit.RetrofitRepository
 
-class CommunityDetailRecyclerAdapter(private val commentList : MutableList<CommentDetail>, private val context : Context)
+class CommunityDetailRecyclerAdapter(private val commentList : MutableList<CommentDetail>, private val context : Context, private val view: View)
     : RecyclerView.Adapter<CommunityDetailRecyclerAdapter.CustomViewHolder>() {
 
     override fun onCreateViewHolder(
@@ -21,7 +31,7 @@ class CommunityDetailRecyclerAdapter(private val commentList : MutableList<Comme
     }
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
-        val commentItem : CommentDetail= commentList[position]
+        val commentItem : CommentDetail = commentList[position]
         holder.childCommentRV.adapter = CommunityDetailChildCommentRecyclerAdapter(commentItem.childCommentList)
         holder.childCommentRV.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
@@ -35,6 +45,16 @@ class CommunityDetailRecyclerAdapter(private val commentList : MutableList<Comme
         holder.nickname.text = commentItem.comment.nickname
 
         holder.writeChildBtn.setOnClickListener {
+            view.findViewById<EditText>(R.id.Community_Detail_Comment_Input).hint= "답글을 입력해주세요"
+
+            var button = view.findViewById<AppCompatButton>(R.id.Community_Detail_Comment_Btn)
+            button.setOnClickListener {
+                if(button.text.toString().trim().isBlank()) {
+                    Toast.makeText(context, "답글을 입력해주세요", Toast.LENGTH_SHORT).show()
+                } else {
+                    (this as CommunityDetailActivity).writeComment(commentItem.postId, commentItem.comment.commentId)
+                }
+            }
 
         }
     }
@@ -54,5 +74,4 @@ class CommunityDetailRecyclerAdapter(private val commentList : MutableList<Comme
 
         var childCommentRV : RecyclerView = itemView.findViewById(R.id.Community_Detail_RV_ChildComment)
     }
-
 }
