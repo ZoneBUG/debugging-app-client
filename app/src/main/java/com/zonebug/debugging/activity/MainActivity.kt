@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         // My Page
         binding.MainImgBtnMyPage.setOnClickListener {
-            intent = Intent(this, LoginActivity::class.java)
+            intent = Intent(this, MyPageActivity::class.java)
             startActivity(intent)
         }
 
