@@ -20,6 +20,10 @@ interface RetrofitService {
         @Body loginRequestDTO: LoginRequestDTO
     ) : Response<TokenResponseDTO>
 
+//    @GET("user/signin")
+//    suspend fun signInNaver(
+//        @Body loginRequestDTO: LoginRequestDTO
+//    ) : Response<TokenResponseDTO>
 
     @GET("community/")
     suspend fun getCommunityMain() : Response<CommunityMainDTO>

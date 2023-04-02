@@ -17,7 +17,7 @@ import com.zonebug.debugging.retrofit.RetrofitRepository
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
-    private lateinit var viewModel: TokenViewModel
+    private lateinit var viewModel: LoginViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,9 +45,9 @@ class LoginActivity : AppCompatActivity() {
         val loginRequestDTO = LoginRequestDTO(email = email, password = password)
 
         val repository = RetrofitRepository
-        val viewModelFactory = TokenViewModelFactory(repository)
+        val viewModelFactory = LoginViewModelFactory(repository)
 
-        viewModel = ViewModelProvider(this, viewModelFactory).get(TokenViewModel::class.java)
+        viewModel = ViewModelProvider(this, viewModelFactory).get(LoginViewModel::class.java)
         viewModel.signIn(loginRequestDTO)
         viewModel.myResponse.observe(this, Observer {
             if(it.isSuccessful) {

@@ -17,6 +17,10 @@ object RetrofitRepository {
         return RetrofitObject.api.signIn(loginRequestDTO)
     }
 
+//    suspend fun signInNaver() : Response<TokenResponseDTO> {
+//        return RetrofitObject.api.signInNaver()
+//    }
+
     suspend fun getCommunityMain() : Response<CommunityMainDTO> {
         return RetrofitObject.api.getCommunityMain()
     }

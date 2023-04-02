@@ -83,16 +83,16 @@
 <!--            android:textColor="@color/white"-->
 <!--            android:fontFamily="@font/main_font_b"/>-->
 
-<!--        <androidx.appcompat.widget.AppCompatButton-->
-<!--            android:id="@+id/Login_Button_Naver"-->
-<!--            android:layout_width="270sp"-->
-<!--            android:layout_height="45sp"-->
-<!--            android:layout_marginVertical="3sp"-->
-<!--            android:background="@drawable/custom_button_green"-->
-<!--            android:text="네이버로 로그인하기"-->
-<!--            android:textSize="17sp"-->
-<!--            android:textColor="@color/white"-->
-<!--            android:fontFamily="@font/main_font_b"/>-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/Login_Button_Naver"
+            android:layout_width="270sp"
+            android:layout_height="45sp"
+            android:layout_marginVertical="3sp"
+            android:background="@drawable/custom_button_green"
+            android:text="네이버 아이디로 로그인"
+            android:textSize="17sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/main_font_b"/>
 
         <LinearLayout
             android:id="@+id/Login_Container_Bottom"

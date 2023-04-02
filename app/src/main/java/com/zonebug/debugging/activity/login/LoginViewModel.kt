@@ -9,9 +9,10 @@ import com.zonebug.debugging.retrofit.RetrofitRepository
 import kotlinx.coroutines.launch
 import retrofit2.Response
 
-class TokenViewModel(private val repository: RetrofitRepository) : ViewModel() {
+class LoginViewModel(private val repository: RetrofitRepository) : ViewModel() {
 
     val myResponse : MutableLiveData<Response<TokenResponseDTO>> = MutableLiveData()
+//    val myResponse2 : MutableLiveData<Response<SocialLoginResponseDTO>> = MutableLiveData()
 
     fun signIn(loginRequestDTO: LoginRequestDTO) {
         viewModelScope.launch {
@@ -19,4 +20,11 @@ class TokenViewModel(private val repository: RetrofitRepository) : ViewModel() {
             myResponse.value = response
         }
     }
+
+//    fun signInNaver() {
+//        viewModelScope.launch {
+//            val response = repository.signInNaver()
+//            myResponse2.value = response
+//        }
+//    }
 }

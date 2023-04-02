@@ -11,7 +11,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.zonebug.debugging.App
 import com.zonebug.debugging.DTO.community.CommunityDetailCommentDTO
-import com.zonebug.debugging.DTO.community.CommunityDetailDTO
 import com.zonebug.debugging.activity.login.LoginActivity
 import com.zonebug.debugging.databinding.ActivityCommunityDetailBinding
 import com.zonebug.debugging.retrofit.RetrofitRepository
@@ -75,7 +74,21 @@ class CommunityDetailActivity : AppCompatActivity() {
                     } else {
                         binding.CommunityDetailTextNoComment.visibility = View.GONE
                         binding.CommunityDetailRVComment.visibility = View.VISIBLE
-                        setAdapter(communityDetailDTO.commentList)
+
+                        var parentCommentList = communityDetailDTO.commentList.filter {
+                            it.parentId == 0L
+                        }
+
+                        var finalCommentList = mutableListOf<CommentDetail>()
+
+                        for(parent in parentCommentList) {
+                            var childCommentList = communityDetailDTO.commentList.filter {
+                                it.parentId == parent.commentId
+                            }
+                            finalCommentList.add(CommentDetail(parent, childCommentList))
+                        }
+
+                        setAdapter(finalCommentList)
                     }
 
                 }
@@ -96,8 +109,8 @@ class CommunityDetailActivity : AppCompatActivity() {
         })
     }
 
-    private fun setAdapter(commentList: List<CommunityDetailDTO.Comment>) {
-        binding.CommunityDetailRVComment.adapter = CommunityDetailRecyclerAdapter(commentList)
+    private fun setAdapter(commentList: MutableList<CommentDetail>) {
+        binding.CommunityDetailRVComment.adapter = CommunityDetailRecyclerAdapter(commentList, this)
         binding.CommunityDetailRVComment.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         binding.CommunityDetailRVComment.setHasFixedSize(true)
     }
