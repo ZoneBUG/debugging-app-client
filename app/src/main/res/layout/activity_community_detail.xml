@@ -184,7 +184,8 @@
                 <ScrollView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fadeScrollbars="true">
+                    android:scrollbars="none"
+                    android:overScrollMode="never">
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/Community_Detail_RV_Comment"
