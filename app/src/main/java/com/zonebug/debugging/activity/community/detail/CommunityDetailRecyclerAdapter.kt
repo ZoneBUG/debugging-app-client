@@ -52,7 +52,7 @@ class CommunityDetailRecyclerAdapter(private val commentList : MutableList<Comme
                 if(button.text.toString().trim().isBlank()) {
                     Toast.makeText(context, "답글을 입력해주세요", Toast.LENGTH_SHORT).show()
                 } else {
-                    (this as CommunityDetailActivity).writeComment(commentItem.postId, commentItem.comment.commentId)
+                    (context as CommunityDetailActivity).writeComment(commentItem.postId, commentItem.comment.commentId)
                 }
             }
 
