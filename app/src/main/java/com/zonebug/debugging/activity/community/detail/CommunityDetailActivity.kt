@@ -85,7 +85,7 @@ class CommunityDetailActivity : AppCompatActivity() {
                             var childCommentList = communityDetailDTO.commentList.filter {
                                 it.parentId == parent.commentId
                             }
-                            finalCommentList.add(CommentDetail(parent, childCommentList))
+                            finalCommentList.add(CommentDetail(postId, parent, childCommentList))
                         }
 
                         setAdapter(finalCommentList)
@@ -110,12 +110,12 @@ class CommunityDetailActivity : AppCompatActivity() {
     }
 
     private fun setAdapter(commentList: MutableList<CommentDetail>) {
-        binding.CommunityDetailRVComment.adapter = CommunityDetailRecyclerAdapter(commentList, this)
+        binding.CommunityDetailRVComment.adapter = CommunityDetailRecyclerAdapter(commentList, this, view = binding.root)
         binding.CommunityDetailRVComment.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         binding.CommunityDetailRVComment.setHasFixedSize(true)
     }
 
-    private fun writeComment(postId: Long, parentId: Long) {
+    fun writeComment(postId: Long, parentId: Long) {
         var contents = binding.CommunityDetailCommentInput.text.toString()
         val communityDetailCommentDTO = CommunityDetailCommentDTO(postId = postId, parentId = parentId, contents = contents)
 
