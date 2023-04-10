@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "822307938886",
+    "project_id": "debugging-eb903",
+    "storage_bucket": "debugging-eb903.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:822307938886:android:90fd8ea23fdaab6ef66047",
+        "android_client_info": {
+          "package_name": "com.zonebug.debugging"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "822307938886-6205cikgivgj16ir1oqn0mivp0jq8nn9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9ZJZH10kO-v3anwcBua8nOKR-t6JYHK4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "822307938886-6205cikgivgj16ir1oqn0mivp0jq8nn9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
