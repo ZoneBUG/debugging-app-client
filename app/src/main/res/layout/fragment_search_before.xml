@@ -37,24 +37,32 @@
                 android:background="@drawable/custom_button_white_grey2"
                 android:orientation="vertical">
 
-                <ImageButton
-                    android:id="@+id/Search_Before_Btn_Upload"
-                    android:layout_width="200sp"
-                    android:layout_height="202sp"
-                    android:padding="10sp"
+                <LinearLayout
+                    android:id="@+id/Search_Before_Container_Select"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:backgroundTint="@color/white"
-                    android:src="@drawable/img_search_upload"
-                    android:scaleType="fitCenter"/>
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="클릭하여 사진 첨부하기"
-                    android:textSize="17sp"
-                    android:textColor="@color/main_grey2"
-                    android:fontFamily="@font/main_font_sb" />
+                    <ImageButton
+                        android:id="@+id/Search_Before_Btn_Select"
+                        android:layout_width="200sp"
+                        android:layout_height="202sp"
+                        android:padding="10sp"
+                        android:backgroundTint="@color/white"
+                        android:src="@drawable/img_search_upload"
+                        android:scaleType="fitCenter"/>
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="클릭하여 사진 첨부하기"
+                        android:textSize="17sp"
+                        android:textColor="@color/main_grey2"
+                        android:fontFamily="@font/main_font_sb" />
+
+                </LinearLayout>
 
                 <ImageView
                     android:id="@+id/Search_Before_Image"
@@ -68,7 +76,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/Search_Before_Container_Replace"
+                android:id="@+id/Search_Before_Container_Edit"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="5"
@@ -77,7 +85,7 @@
                 android:visibility="gone">
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/Search_Before_Btn_Replace"
+                    android:id="@+id/Search_Before_Btn_Edit"
                     android:layout_width="match_parent"
                     android:layout_height="50sp"
                     android:background="@drawable/custom_button_white_red"

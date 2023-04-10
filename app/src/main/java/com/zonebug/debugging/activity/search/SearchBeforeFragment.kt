@@ -6,8 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.LinearLayout
 import androidx.appcompat.widget.AppCompatButton
 import com.zonebug.debugging.R
 
@@ -22,19 +20,22 @@ class SearchBeforeFragment : Fragment() {
     ): View? {
 
         val view = inflater.inflate(R.layout.fragment_search_before, container, false)
-        val uploadBtn : ImageButton = view.findViewById(R.id.Search_Before_Btn_Upload)
-        val replaceBtn : LinearLayout = view.findViewById(R.id.Search_Before_Container_Replace)
-        val imageView : ImageView = view.findViewById(R.id.Search_Before_Image)
+        val selectBtn : ImageButton = view.findViewById(R.id.Search_Before_Btn_Select)
+        val editBtn : AppCompatButton = view.findViewById(R.id.Search_Before_Btn_Edit)
 
-        uploadBtn.setOnClickListener {
-            replaceBtn.visibility = View.VISIBLE
+        // 이미지 선택하기
+        selectBtn.setOnClickListener {
+            (activity as SearchActivity).selectImage()
         }
 
-
-
-
+        // 이미지 다시 선택하기
+        editBtn.setOnClickListener {
+            (activity as SearchActivity).selectImage()
+        }
 
         return view
     }
+
+
 
 }
