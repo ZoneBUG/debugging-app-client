@@ -1,4 +1,4 @@
-package com.zonebug.debugging.retrofit
+package com.zonebug.debugging.retrofit.web
 
 import com.zonebug.debugging.DTO.community.*
 import com.zonebug.debugging.DTO.user.LoginRequestDTO

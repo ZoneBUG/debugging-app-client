@@ -2,7 +2,7 @@ package com.zonebug.debugging.activity.register
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.zonebug.debugging.retrofit.RetrofitRepository
+import com.zonebug.debugging.retrofit.web.RetrofitRepository
 
 class RegisterViewModelFactory(private val repository : RetrofitRepository)
     : ViewModelProvider.Factory {

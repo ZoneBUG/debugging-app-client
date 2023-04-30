@@ -3,12 +3,9 @@ package com.zonebug.debugging.activity.register
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.zonebug.debugging.DTO.community.CommunityWriteRequestDTO
-import com.zonebug.debugging.DTO.community.CommunityWriteResponseDTO
 import com.zonebug.debugging.DTO.user.RegisterRequestDTO
 import com.zonebug.debugging.DTO.user.RegisterResponseDTO
-import com.zonebug.debugging.DTO.user.TokenResponseDTO
-import com.zonebug.debugging.retrofit.RetrofitRepository
+import com.zonebug.debugging.retrofit.web.RetrofitRepository
 import kotlinx.coroutines.launch
 import retrofit2.Response
 

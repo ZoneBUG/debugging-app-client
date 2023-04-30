@@ -13,7 +13,7 @@ import com.zonebug.debugging.DTO.community.CommunityListDTO
 import com.zonebug.debugging.activity.community.write.CommunityWriteActivity
 import com.zonebug.debugging.activity.login.LoginActivity
 import com.zonebug.debugging.databinding.ActivityCommunityListBinding
-import com.zonebug.debugging.retrofit.RetrofitRepository
+import com.zonebug.debugging.retrofit.web.RetrofitRepository
 
 class CommunityListActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCommunityListBinding

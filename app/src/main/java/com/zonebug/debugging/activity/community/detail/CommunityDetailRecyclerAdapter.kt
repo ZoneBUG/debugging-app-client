@@ -1,8 +1,6 @@
 package com.zonebug.debugging.activity.community.detail
 
 import android.content.Context
-import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,14 +8,9 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.zonebug.debugging.App
-import com.zonebug.debugging.DTO.community.CommunityDetailCommentDTO
 import com.zonebug.debugging.R
-import com.zonebug.debugging.activity.login.LoginActivity
-import com.zonebug.debugging.retrofit.RetrofitRepository
 
 class CommunityDetailRecyclerAdapter(private val commentList : MutableList<CommentDetail>, private val context : Context, private val view: View)
     : RecyclerView.Adapter<CommunityDetailRecyclerAdapter.CustomViewHolder>() {
