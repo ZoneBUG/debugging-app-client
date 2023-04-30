@@ -1,6 +1,5 @@
 package com.zonebug.debugging.activity.community.write
 
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,7 +12,7 @@ import com.zonebug.debugging.DTO.community.CommunityWriteRequestDTO
 import com.zonebug.debugging.activity.community.detail.CommunityDetailActivity
 import com.zonebug.debugging.activity.login.LoginActivity
 import com.zonebug.debugging.databinding.ActivityCommunityWriteBinding
-import com.zonebug.debugging.retrofit.RetrofitRepository
+import com.zonebug.debugging.retrofit.web.RetrofitRepository
 
 class CommunityWriteActivity : AppCompatActivity() {
 

@@ -12,7 +12,7 @@ import com.zonebug.debugging.DTO.user.LoginRequestDTO
 import com.zonebug.debugging.activity.MainActivity
 import com.zonebug.debugging.activity.register.RegisterActivity
 import com.zonebug.debugging.databinding.ActivityLoginBinding
-import com.zonebug.debugging.retrofit.RetrofitRepository
+import com.zonebug.debugging.retrofit.web.RetrofitRepository
 
 class LoginActivity : AppCompatActivity() {
 

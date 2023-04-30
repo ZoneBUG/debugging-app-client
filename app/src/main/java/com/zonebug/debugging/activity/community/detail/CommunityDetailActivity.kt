@@ -13,7 +13,7 @@ import com.zonebug.debugging.App
 import com.zonebug.debugging.DTO.community.CommunityDetailCommentDTO
 import com.zonebug.debugging.activity.login.LoginActivity
 import com.zonebug.debugging.databinding.ActivityCommunityDetailBinding
-import com.zonebug.debugging.retrofit.RetrofitRepository
+import com.zonebug.debugging.retrofit.web.RetrofitRepository
 
 class CommunityDetailActivity : AppCompatActivity() {
 

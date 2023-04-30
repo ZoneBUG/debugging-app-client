@@ -6,7 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.zonebug.debugging.DTO.community.CommunityDetailCommentDTO
 import com.zonebug.debugging.DTO.community.CommunityDetailCommentResponseDTO
 import com.zonebug.debugging.DTO.community.CommunityDetailDTO
-import com.zonebug.debugging.retrofit.RetrofitRepository
+import com.zonebug.debugging.retrofit.web.RetrofitRepository
 import kotlinx.coroutines.launch
 import retrofit2.Response
 

@@ -3,6 +3,8 @@
     package="com.zonebug.debugging">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
@@ -13,7 +15,8 @@
         android:roundIcon="@drawable/img_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Debugging"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"
+        android:requestLegacyExternalStorage="true">
         <activity
             android:name=".activity.community.write.CommunityWriteActivity"
             android:windowSoftInputMode="adjustResize"

@@ -1,6 +1,5 @@
 package com.zonebug.debugging.activity.register
 
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,7 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.zonebug.debugging.DTO.user.RegisterRequestDTO
 import com.zonebug.debugging.activity.login.LoginActivity
 import com.zonebug.debugging.databinding.ActivityRegisterBinding
-import com.zonebug.debugging.retrofit.RetrofitRepository
+import com.zonebug.debugging.retrofit.web.RetrofitRepository
 
 class RegisterActivity : AppCompatActivity() {
 
