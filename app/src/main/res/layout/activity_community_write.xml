@@ -94,10 +94,10 @@
                 android:layout_height="32dp"
                 android:layout_marginBottom="10sp"
                 android:text="사진 첨부"
-                android:textColor="@color/main_red"
+                android:textColor="@color/main"
                 android:textSize="15sp"
                 android:fontFamily="@font/main_font_sb"
-                android:background="@drawable/custom_button_white_red" />
+                android:background="@drawable/custom_button_white_green" />
 
         </LinearLayout>
 
@@ -116,7 +116,7 @@
                 android:layout_marginBottom="5sp"
                 android:padding="10sp"
                 android:background="@drawable/custom_button_red"
-                android:backgroundTint="@color/main_red"
+                android:backgroundTint="@color/main"
                 android:text="등록하기"
                 android:textColor="@color/white"
                 android:textSize="17sp"

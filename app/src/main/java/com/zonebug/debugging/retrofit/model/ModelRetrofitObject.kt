@@ -12,7 +12,8 @@ object ModelRetrofitObject {
 
     private val retrofit = Retrofit.Builder()
 //        .baseUrl("http://192.168.0.148:5000/")
-        .baseUrl("http:///172.30.1.85:5000/")
+        .baseUrl("http://10.200.0.1:5000/")
+//        .baseUrl("http://10.200.3.6:5000/")
         .client(okHttpClient(AppInterceptor()))
         .addConverterFactory(GsonConverterFactory.create())
         .build()

@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:text="닉네임111"
             android:textSize="13sp"
-            android:textColor="@color/main_red"
+            android:textColor="@color/main"
             android:fontFamily="@font/main_font_sb"
             android:lineSpacingExtra="3.3sp"/>
 
