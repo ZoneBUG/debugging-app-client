@@ -88,7 +88,7 @@
                     android:id="@+id/Search_Before_Btn_Edit"
                     android:layout_width="match_parent"
                     android:layout_height="50sp"
-                    android:background="@drawable/custom_button_white_red"
+                    android:background="@drawable/custom_button_white_green"
                     android:text="다시 선택하기"
                     android:textSize="20sp"
                     android:textColor="@color/main"
