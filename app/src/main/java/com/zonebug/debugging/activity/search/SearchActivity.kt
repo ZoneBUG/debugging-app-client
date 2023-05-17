@@ -184,8 +184,8 @@ class SearchActivity : AppCompatActivity() {
             when {
                 it.isSuccessful -> {
                     val searchResponseDTO = it.body()!!
-                    viewModel.name = MutableLiveData<String>(searchResponseDTO.type)
-                    Log.d("TAG", "========================================================================================================== " + searchResponseDTO.type)
+                    viewModel.species = MutableLiveData<String>(searchResponseDTO.species)
+                    viewModel.description = MutableLiveData<String>(searchResponseDTO.description)
                     switchFragment()
 
                 }
