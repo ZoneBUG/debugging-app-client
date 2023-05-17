@@ -22,7 +22,7 @@
                 android:layout_height="24sp"
                 android:src="@drawable/icon_drug"
                 android:padding="2sp"
-                android:layout_marginHorizontal="10sp"/>
+                android:layout_marginRight="6sp"/>
 
             <TextView
                 android:id="@+id/Item_Report_Drug_Name"
@@ -40,6 +40,7 @@
             android:id="@+id/Item_Report_Drug_Description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4sp"
             android:layout_marginLeft="10sp"
             android:text="테스트 약물 내용 입니다다다다다"
             android:textSize="13sp"

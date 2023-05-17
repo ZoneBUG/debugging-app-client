@@ -1,6 +1,7 @@
 package com.zonebug.debugging.retrofit.web
 
 import com.zonebug.debugging.DTO.community.*
+import com.zonebug.debugging.DTO.report.ReportResponseDTO
 import com.zonebug.debugging.DTO.user.LoginRequestDTO
 import com.zonebug.debugging.DTO.user.RegisterRequestDTO
 import com.zonebug.debugging.DTO.user.RegisterResponseDTO
@@ -20,6 +21,10 @@ object RetrofitRepository {
 //    suspend fun signInNaver() : Response<TokenResponseDTO> {
 //        return RetrofitObject.api.signInNaver()
 //    }
+
+    suspend fun getReportList(period: Int) : Response<ReportResponseDTO> {
+        return RetrofitObject.api.getReportList(period)
+    }
 
     suspend fun getCommunityMain() : Response<CommunityMainDTO> {
         return RetrofitObject.api.getCommunityMain()

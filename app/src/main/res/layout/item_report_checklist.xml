@@ -15,7 +15,7 @@
             android:layout_width="20sp"
             android:layout_height="20sp"
             android:src="@drawable/icon_check"
-            android:layout_marginHorizontal="10sp"/>
+            android:layout_marginRight="10sp"/>
 
         <TextView
             android:id="@+id/Item_Report_Checklist_Contents"
