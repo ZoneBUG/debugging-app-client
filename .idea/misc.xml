@@ -10,6 +10,7 @@
         <entry key="..\:/Users/seoya/AndroidStudioProjects/Debugging/app/src/main/res/drawable/custom_button_grey.xml" value="0.3026041666666667" />
         <entry key="..\:/Users/seoya/AndroidStudioProjects/Debugging/app/src/main/res/drawable/custom_button_main.xml" value="0.3026041666666667" />
         <entry key="..\:/Users/seoya/AndroidStudioProjects/Debugging/app/src/main/res/drawable/custom_button_red.xml" value="0.303125" />
+        <entry key="..\:/Users/seoya/AndroidStudioProjects/Debugging/app/src/main/res/drawable/custom_button_white.xml" value="0.36770833333333336" />
         <entry key="..\:/Users/seoya/AndroidStudioProjects/Debugging/app/src/main/res/drawable/custom_button_white_green.xml" value="0.18125" />
         <entry key="..\:/Users/seoya/AndroidStudioProjects/Debugging/app/src/main/res/drawable/custom_button_white_grey.xml" value="0.22708333333333333" />
         <entry key="..\:/Users/seoya/AndroidStudioProjects/Debugging/app/src/main/res/drawable/custom_button_white_grey2.xml" value="0.18125" />
@@ -31,7 +32,7 @@
         <entry key="..\:/Users/seoya/AndroidStudioProjects/Debugging/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/seoya/AndroidStudioProjects/Debugging/app/src/main/res/layout/activity_mypage.xml" value="0.28541666666666665" />
         <entry key="..\:/Users/seoya/AndroidStudioProjects/Debugging/app/src/main/res/layout/activity_register.xml" value="0.4" />
-        <entry key="..\:/Users/seoya/AndroidStudioProjects/Debugging/app/src/main/res/layout/activity_report.xml" value="0.5" />
+        <entry key="..\:/Users/seoya/AndroidStudioProjects/Debugging/app/src/main/res/layout/activity_report.xml" value="0.33" />
         <entry key="..\:/Users/seoya/AndroidStudioProjects/Debugging/app/src/main/res/layout/activity_report_detail.xml" value="0.5" />
         <entry key="..\:/Users/seoya/AndroidStudioProjects/Debugging/app/src/main/res/layout/activity_report_detail2.xml" value="0.2203125" />
         <entry key="..\:/Users/seoya/AndroidStudioProjects/Debugging/app/src/main/res/layout/activity_search.xml" value="0.264" />

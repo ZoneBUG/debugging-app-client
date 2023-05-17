@@ -133,6 +133,7 @@
                 android:id="@+id/Report_Text_Input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
                 android:text="🌱 보고서 생성 주기를 입력해주세요"
                 android:textSize="17sp"
                 android:textColor="@color/black"
