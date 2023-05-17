@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".activity.report.ReportActivity">
+    tools:context=".activity.report.ReportDetailActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/Toolbar_Report"
@@ -29,23 +29,17 @@
 
     </androidx.appcompat.widget.Toolbar>
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
         android:orientation="vertical"
-        android:layout_marginTop="70dp"
-        android:paddingHorizontal="45sp">
+        android:layout_marginTop="70dp">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/Report_Btn"
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/Report_Detail_ViewPager2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/custom_button_green"
-            android:text="보고서 생성하기"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:fontFamily="@font/main_font_m" />
+            android:layout_height="match_parent"/>
 
     </LinearLayout>
 
