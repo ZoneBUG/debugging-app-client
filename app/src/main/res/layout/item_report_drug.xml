@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginVertical="2sp"
+        android:paddingVertical="5sp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="24sp"
+                android:layout_height="24sp"
+                android:src="@drawable/icon_drug"
+                android:padding="2sp"
+                android:layout_marginRight="6sp"/>
+
+            <TextView
+                android:id="@+id/Item_Report_Drug_Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="테스트 약물명"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/main_font_b"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/Item_Report_Drug_Description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4sp"
+            android:layout_marginLeft="10sp"
+            android:text="테스트 약물 내용 입니다다다다다"
+            android:textSize="13sp"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".activity.report.ReportDetailActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/Toolbar_Report"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/white"
+        android:elevation="5sp"
+        app:titleTextColor="@color/black"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/Toolbar_Report_Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:lineSpacingExtra="3.3sp"
+            android:layout_gravity="center_horizontal"
+            android:text="우리 가게 보고서"
+            android:textSize="25sp"
+            android:fontFamily="@font/main_font_sb"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="70dp">
+
+        <TextView
+            android:id="@+id/Report_Detail_Text_No"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="해당 기간동안 포착된 해충이 없습니다."
+            android:textSize="17sp"
+            android:textColor="@color/main_grey"
+            android:fontFamily="@font/main_font_l"
+            android:visibility="gone"/>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/Report_Detail_ViewPager2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="10sp"
+            android:gravity="center">
+
+            <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+                android:id="@+id/worm_dots_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:dotsColor="@color/main_grey2"
+                app:dotsStrokeColor="@color/main_grey2"
+                app:dotsCornerRadius="10sp"
+                app:dotsSize="16sp"
+                app:dotsSpacing="6sp"
+                app:dotsStrokeWidth="2sp" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

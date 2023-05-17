@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
@@ -12,22 +12,23 @@
         android:allowBackup="true"
         android:icon="@drawable/img_logo"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@drawable/img_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Debugging"
-        android:usesCleartextTraffic="true"
-        android:requestLegacyExternalStorage="true">
+        android:usesCleartextTraffic="true">
+
         <activity
             android:name=".activity.community.write.CommunityWriteActivity"
-            android:windowSoftInputMode="adjustResize"
-            android:exported="true" />
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".activity.community.list.CommunityListActivity"
             android:exported="true" />
         <activity
             android:name=".activity.community.detail.CommunityDetailActivity"
-            android:windowSoftInputMode="adjustResize"
-            android:exported="true" />
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".activity.mypage.MyPageActivity"
             android:exported="true" />
@@ -41,6 +42,9 @@
             android:name=".activity.report.ReportActivity"
             android:exported="true" />
         <activity
+            android:name=".activity.report.ReportDetailActivity"
+            android:exported="true" />
+        <activity
             android:name=".activity.community.main.CommunityActivity"
             android:exported="true" />
         <activity
@@ -48,8 +52,8 @@
             android:exported="true" />
         <activity
             android:name=".activity.login.LoginActivity"
-            android:windowSoftInputMode="adjustResize"
-            android:exported="true" />
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".activity.SplashActivity"
             android:exported="true">

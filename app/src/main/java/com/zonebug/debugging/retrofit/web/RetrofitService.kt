@@ -1,6 +1,7 @@
 package com.zonebug.debugging.retrofit.web
 
 import com.zonebug.debugging.DTO.community.*
+import com.zonebug.debugging.DTO.report.ReportResponseDTO
 import com.zonebug.debugging.DTO.user.LoginRequestDTO
 import com.zonebug.debugging.DTO.user.RegisterRequestDTO
 import com.zonebug.debugging.DTO.user.RegisterResponseDTO
@@ -24,6 +25,11 @@ interface RetrofitService {
 //    suspend fun signInNaver(
 //        @Body loginRequestDTO: LoginRequestDTO
 //    ) : Response<TokenResponseDTO>
+
+    @GET("/report/{period}")
+    suspend fun getReportList(
+        @Path("period") period: Int
+    ) : Response<ReportResponseDTO>
 
     @GET("community/")
     suspend fun getCommunityMain() : Response<CommunityMainDTO>
