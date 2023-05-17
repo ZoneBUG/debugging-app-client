@@ -31,10 +31,16 @@ class SearchAfterFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var typeText = view.findViewById<TextView>(R.id.Search_After_Text_Type)
+        var speciesText = view.findViewById<TextView>(R.id.Search_After_Text_Species)
+        var descriptionText = view.findViewById<TextView>(R.id.Search_After_Text_Description)
 
-        viewModel.name.observe(viewLifecycleOwner, Observer {
-            typeText.text = it
+
+        viewModel.species.observe(viewLifecycleOwner, Observer {
+            speciesText.text = it
+        })
+
+        viewModel.description.observe(viewLifecycleOwner, Observer {
+            descriptionText.text = it
         })
     }
 
