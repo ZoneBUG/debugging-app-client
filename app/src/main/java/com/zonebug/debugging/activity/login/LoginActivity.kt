@@ -47,7 +47,7 @@ class LoginActivity : AppCompatActivity() {
         val repository = RetrofitRepository
         val viewModelFactory = LoginViewModelFactory(repository)
 
-        viewModel = ViewModelProvider(this, viewModelFactory).get(LoginViewModel::class.java)
+        viewModel = ViewModelProvider(this, viewModelFactory)[LoginViewModel::class.java]
         viewModel.signIn(loginRequestDTO)
         viewModel.myResponse.observe(this, Observer {
             if(it.isSuccessful) {

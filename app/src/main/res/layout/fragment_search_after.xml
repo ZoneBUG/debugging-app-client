@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    android:id="@+id/Search_FrameLayout_After"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -32,7 +34,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20sp"
                     android:layout_marginBottom="40sp"
-                    android:src="@drawable/img_logo"
                     android:scaleType="fitCenter"/>
 
             </LinearLayout>
@@ -48,7 +49,6 @@
                     android:id="@+id/Search_After_Text_Species"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="바퀴벌레"
                     android:textSize="25sp"
                     android:textColor="@color/main"
                     android:fontFamily="@font/main_font_b" />
@@ -62,7 +62,6 @@
                         android:id="@+id/Search_After_Text_Description"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다. 설명입니다."
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         android:fontFamily="@font/main_font_l"

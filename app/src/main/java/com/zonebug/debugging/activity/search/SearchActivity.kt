@@ -11,9 +11,6 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import android.view.View
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.google.firebase.storage.FirebaseStorage
@@ -31,11 +28,7 @@ import androidx.core.app.ActivityCompat
 import android.content.pm.PackageManager
 
 import android.app.Activity
-import android.widget.TextView
-import androidx.lifecycle.MutableLiveData
-import com.zonebug.debugging.App
-import com.zonebug.debugging.activity.community.detail.CommunityDetailActivity
-import com.zonebug.debugging.activity.login.LoginActivity
+import android.widget.*
 
 
 class SearchActivity : AppCompatActivity() {
@@ -44,7 +37,8 @@ class SearchActivity : AppCompatActivity() {
     private lateinit var viewModel: SearchViewModel
     private lateinit var filePath : String
     val repository = ModelRetrofitRepository
-    var isBefore : Boolean = true
+    var isBefore = true
+    var select = false
 
     private lateinit var image : MultipartBody.Part
     private lateinit var imageURI : Uri
@@ -81,9 +75,7 @@ class SearchActivity : AppCompatActivity() {
 
         // 하단 버튼 클릭
         binding.SearchBtn.setOnClickListener {
-            if(isBefore) search(image) // uploadImage()
-
-            isBefore = !isBefore
+            switchFragment()
         }
 
     }
@@ -92,16 +84,23 @@ class SearchActivity : AppCompatActivity() {
     private fun switchFragment() {
         val transaction = supportFragmentManager.beginTransaction()
 
-        if(isBefore) {
-            transaction.replace(R.id.Search_MainView, SearchBeforeFragment())
-                .addToBackStack(null)
-                .commit()
-            binding.SearchBtn.text = "검색하기"
-        } else {
-            transaction.replace(R.id.Search_MainView, SearchAfterFragment())
-                .addToBackStack(null)
-                .commit()
-            binding.SearchBtn.text = "다른 벌레 검색하기"
+        when(isBefore) {
+            true -> {
+                if(select) {
+                    search(image)
+                    transaction.replace(R.id.Search_MainView, SearchAfterFragment())
+                    transaction.addToBackStack(null)
+                    transaction.commit()
+                    binding.SearchBtn.text = "홈화면으로 돌아가기"
+                    isBefore = false
+                } else {
+                    Toast.makeText(this@SearchActivity, "이미지를 선택해주세요", Toast.LENGTH_SHORT).show()
+                    return
+                }
+            }
+            false -> {
+                finish()
+            }
         }
 
     }
@@ -113,6 +112,7 @@ class SearchActivity : AppCompatActivity() {
         intent.action = Intent.ACTION_PICK
 
         startActivityForResult(intent, 100)
+        select = true
     }
 
 
@@ -153,45 +153,18 @@ class SearchActivity : AppCompatActivity() {
     }
 
 
-    private fun uploadImage() {
-        val progressDialog = ProgressDialog(this)
-        progressDialog.setMessage("업로드중입니다")
-        progressDialog.setCancelable(false)
-        progressDialog.show()
-
-        val formatter = SimpleDateFormat("yyyy_MM_dd_HH_mm_ss", Locale.getDefault())
-        val now = Date()
-        val fileName = formatter.format(now)
-        val storageReference = FirebaseStorage.getInstance().getReference("Search/$fileName")
-
-        val imageView : ImageView = this.findViewById(R.id.Search_Before_Image)
-        storageReference.putFile(imageURI).addOnSuccessListener {
-            imageView.setImageURI(null)
-            Toast.makeText(this@SearchActivity, "업로드 성공", Toast.LENGTH_SHORT).show()
-            if(progressDialog.isShowing) progressDialog.dismiss()
-
-        }.addOnFailureListener {
-            if(progressDialog.isShowing) progressDialog.dismiss()
-            Toast.makeText(this@SearchActivity, "업로드 실패", Toast.LENGTH_SHORT).show()
-        }
-    }
-
     private fun search(image : MultipartBody.Part) {
         val viewModelFactory = SearchViewModelFactory(repository)
+
         viewModel = ViewModelProvider(this, viewModelFactory).get(SearchViewModel::class.java)
         viewModel.search(image, "model_v4")
         viewModel.myResponse.observe(this, Observer {
             when {
                 it.isSuccessful -> {
                     val searchResponseDTO = it.body()!!
-                    viewModel.species = MutableLiveData<String>(searchResponseDTO.species)
-                    viewModel.description = MutableLiveData<String>(searchResponseDTO.description)
-                    switchFragment()
-
                 }
                 else -> {
                     Toast.makeText(this@SearchActivity, "검색에 실패했습니다.", Toast.LENGTH_SHORT).show()
-
                 }
             }
         })
@@ -201,4 +174,29 @@ class SearchActivity : AppCompatActivity() {
     override fun onBackPressed() {
         finish()
     }
+
+
+//    private fun uploadImage() {
+//        val progressDialog = ProgressDialog(this)
+//        progressDialog.setMessage("업로드중입니다")
+//        progressDialog.setCancelable(false)
+//        progressDialog.show()
+//
+//        val formatter = SimpleDateFormat("yyyy_MM_dd_HH_mm_ss", Locale.getDefault())
+//        val now = Date()
+//        val fileName = formatter.format(now)
+//        val storageReference = FirebaseStorage.getInstance().getReference("Search/$fileName")
+//
+//        val imageView : ImageView = this.findViewById(R.id.Search_Before_Image)
+//        storageReference.putFile(imageURI).addOnSuccessListener {
+//            imageView.setImageURI(null)
+//            Toast.makeText(this@SearchActivity, "업로드 성공", Toast.LENGTH_SHORT).show()
+//            if(progressDialog.isShowing) progressDialog.dismiss()
+//
+//        }.addOnFailureListener {
+//            if(progressDialog.isShowing) progressDialog.dismiss()
+//            Toast.makeText(this@SearchActivity, "업로드 실패", Toast.LENGTH_SHORT).show()
+//        }
+//    }
+
 }
