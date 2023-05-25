@@ -12,8 +12,6 @@ import retrofit2.Response
 class SearchViewModel(private val repository: ModelRetrofitRepository) : ViewModel() {
 
     val myResponse : MutableLiveData<Response<SearchResponseDTO>> = MutableLiveData()
-    var species : MutableLiveData<String> = MutableLiveData()
-    var description : MutableLiveData<String> = MutableLiveData()
 
     fun search(image : MultipartBody.Part, model : String) {
         viewModelScope.launch {
