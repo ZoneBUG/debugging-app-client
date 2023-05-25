@@ -27,11 +27,11 @@ class CommunityDetailChildCommentRecyclerAdapter(private val childCommentList : 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
         val commentItem : CommunityDetailDTO.Comment = childCommentList[position]
 
-        if(commentItem.isMine) {
-            holder.editBtn.visibility = View.VISIBLE
-        } else {
-            holder.reportBtn.visibility = View.VISIBLE
-        }
+//        if(commentItem.isMine) {
+//            holder.editBtn.visibility = View.VISIBLE
+//        } else {
+//            holder.reportBtn.visibility = View.VISIBLE
+//        }
 
         holder.contents.text = commentItem.contents
         holder.nickname.text = commentItem.nickname

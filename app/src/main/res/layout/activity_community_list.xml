@@ -38,6 +38,17 @@
         android:paddingHorizontal="20sp"
         android:paddingVertical="20sp">
 
+        <TextView
+            android:id="@+id/Community_List_Text_No"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="작성된 글이 없습니다."
+            android:textSize="17sp"
+            android:textColor="@color/main_grey"
+            android:fontFamily="@font/main_font_l"
+            android:visibility="gone"/>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/Community_List_RV"
             android:layout_width="match_parent"

@@ -14,6 +14,8 @@ import com.zonebug.debugging.DTO.community.CommunityDetailCommentDTO
 import com.zonebug.debugging.activity.login.LoginActivity
 import com.zonebug.debugging.databinding.ActivityCommunityDetailBinding
 import com.zonebug.debugging.retrofit.web.RetrofitRepository
+import java.text.SimpleDateFormat
+import java.time.format.DateTimeFormatter
 
 class CommunityDetailActivity : AppCompatActivity() {
 
@@ -44,28 +46,29 @@ class CommunityDetailActivity : AppCompatActivity() {
     private fun fetchDetail(postId : Long) {
         val repository = RetrofitRepository
         val viewModelFactory = CommunityDetailViewModelFactory(repository)
+        val dateFormat = "yyyy-MM-dd HH:mm"
 
         viewModel = ViewModelProvider(this, viewModelFactory).get(CommunityDetailViewModel::class.java)
         viewModel.getDetailPost(postId)
         viewModel.myResponse.observe(this, Observer {
             when {
                 it.isSuccessful -> {
+
                     val communityDetailDTO = it.body()!!
                     binding.CommunityDetailTitle.text = communityDetailDTO.post.title
                     binding.CommunityDetailContents.text = communityDetailDTO.post.contents
-                    binding.CommunityDetailInfoNickname.text = "닉네임1"
-                    //                binding.CommunityDetailInfoNickname.text = communityDetailDTO.post.nickname
-                    binding.CommunityDetailInfoDate.text = communityDetailDTO.post.createdAt.toString().substring(4, 10)
+                    binding.CommunityDetailInfoNickname.text = communityDetailDTO.post.nickname
+                    binding.CommunityDetailInfoDate.text = SimpleDateFormat(dateFormat).format(communityDetailDTO.post.createdAt)
                     binding.CommunityDetailInfoHits.text = "조회수 (" + communityDetailDTO.post.hits.toString() + ")"
                     binding.CommunityDetailInfoComments.text = "댓글 (" + communityDetailDTO.commentList.size.toString() + ")"
 
 
-                    // 수정하기 버튼 visibility
-                    if(!communityDetailDTO.post.isMine) {
-                        binding.CommunityDetailEdit.visibility = View.INVISIBLE
-                    } else {
-                        binding.CommunityDetailEdit.visibility = View.VISIBLE
-                    }
+//                    // 수정하기 버튼 visibility
+//                    if(!communityDetailDTO.post.isMine) {
+//                        binding.CommunityDetailEdit.visibility = View.INVISIBLE
+//                    } else {
+//                        binding.CommunityDetailEdit.visibility = View.VISIBLE
+//                    }
 
                     // 댓글 유무 알림 텍스트 visibility
                     if(communityDetailDTO.commentList.isEmpty()) {
