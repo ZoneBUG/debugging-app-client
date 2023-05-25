@@ -12,8 +12,7 @@ import java.io.IOException
 object RetrofitObject {
 
     private val retrofit = Retrofit.Builder()
-//        .baseUrl("http://172.30.1.85:8080/")
-        .baseUrl("http://15.164.56.217/")
+        .baseUrl("https://gabinwaffle.store")
         .client(okHttpClient(AppInterceptor()))
         .addConverterFactory(GsonConverterFactory.create())
         .build()
