@@ -15,22 +15,11 @@
             android:id="@+id/Item_Community_List_Title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text="테스트 제목 입니다다다다다"
             android:textSize="15sp"
             android:textColor="@color/black"
-            android:fontFamily="@font/main_font_eb"/>
+            android:fontFamily="@font/main_font_b"/>
 
-        <TextView
-            android:id="@+id/Item_Community_List_Date"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="4"
-            android:gravity="center"
-            android:text="03/27"
-            android:textSize="13sp"
-            android:textColor="@color/main_grey"
-            android:fontFamily="@font/main_font_m"/>
 
     </LinearLayout>
 
@@ -38,17 +27,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingVertical="5sp"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/Item_Community_List_Nickname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="닉네임111"
             android:textSize="13sp"
             android:textColor="@color/main"
             android:fontFamily="@font/main_font_sb"
             android:lineSpacingExtra="3.3sp"/>
+
+        <TextView
+            android:id="@+id/Item_Community_List_Date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="03/27"
+            android:textSize="13sp"
+            android:textColor="@color/main_grey"
+            android:fontFamily="@font/main_font_m"/>
 
     </LinearLayout>
 

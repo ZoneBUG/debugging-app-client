@@ -28,11 +28,11 @@ class CommunityDetailRecyclerAdapter(private val commentList : MutableList<Comme
         holder.childCommentRV.adapter = CommunityDetailChildCommentRecyclerAdapter(commentItem.childCommentList)
         holder.childCommentRV.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
-        if(commentItem.comment.isMine) {
-            holder.editBtn.visibility = View.VISIBLE
-        } else {
-            holder.reportBtn.visibility = View.VISIBLE
-        }
+//        if(commentItem.comment.isMine) {
+//            holder.editBtn.visibility = View.VISIBLE
+//        } else {
+//            holder.reportBtn.visibility = View.VISIBLE
+//        }
 
         holder.contents.text = commentItem.comment.contents
         holder.nickname.text = commentItem.comment.nickname
