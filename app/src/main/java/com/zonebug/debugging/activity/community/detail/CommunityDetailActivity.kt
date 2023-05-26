@@ -16,6 +16,7 @@ import com.zonebug.debugging.databinding.ActivityCommunityDetailBinding
 import com.zonebug.debugging.retrofit.web.RetrofitRepository
 import java.text.SimpleDateFormat
 import java.time.format.DateTimeFormatter
+import java.util.*
 
 class CommunityDetailActivity : AppCompatActivity() {
 
@@ -120,6 +121,7 @@ class CommunityDetailActivity : AppCompatActivity() {
 
     fun writeComment(postId: Long, parentId: Long) {
         var contents = binding.CommunityDetailCommentInput.text.toString()
+        var createdAt = Date()
         val communityDetailCommentDTO = CommunityDetailCommentDTO(postId = postId, parentId = parentId, contents = contents)
 
         if(contents.trim().toString().isBlank()) {

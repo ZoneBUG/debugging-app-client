@@ -12,6 +12,7 @@ import com.zonebug.debugging.DTO.community.CommunityDetailDTO
 import com.zonebug.debugging.DTO.community.CommunityListDTO
 import com.zonebug.debugging.R
 import com.zonebug.debugging.activity.community.detail.CommunityDetailActivity
+import java.text.SimpleDateFormat
 
 class CommunityDetailChildCommentRecyclerAdapter(private val childCommentList : List<CommunityDetailDTO.Comment>)
     : RecyclerView.Adapter<CommunityDetailChildCommentRecyclerAdapter.CustomViewHolder>() {
@@ -26,6 +27,7 @@ class CommunityDetailChildCommentRecyclerAdapter(private val childCommentList : 
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
         val commentItem : CommunityDetailDTO.Comment = childCommentList[position]
+        val dateFormat = "yyyy-MM-dd"
 
 //        if(commentItem.isMine) {
 //            holder.editBtn.visibility = View.VISIBLE
@@ -33,6 +35,7 @@ class CommunityDetailChildCommentRecyclerAdapter(private val childCommentList : 
 //            holder.reportBtn.visibility = View.VISIBLE
 //        }
 
+        holder.date.text = SimpleDateFormat(dateFormat).format(commentItem.createdAt)
         holder.contents.text = commentItem.contents
         holder.nickname.text = commentItem.nickname
     }

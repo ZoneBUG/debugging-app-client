@@ -27,10 +27,10 @@ class MainActivity : AppCompatActivity() {
         Log.d("YMC", "+++++++++++++++++++++++++++++++++++ " + accessToken)
 
         // My Page
-        binding.MainImgBtnMyPage.setOnClickListener {
-            intent = Intent(this, MyPageActivity::class.java)
-            startActivity(intent)
-        }
+//        binding.MainImgBtnMyPage.setOnClickListener {
+//            intent = Intent(this, MyPageActivity::class.java)
+//            startActivity(intent)
+//        }
 
         // Report
         binding.MainBtnReport.setOnClickListener {

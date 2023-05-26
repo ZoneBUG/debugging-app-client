@@ -23,6 +23,7 @@ data class CommunityDetailDTO(
         val parentId : Long,
         val nickname : String,
         val contents : String,
-        val isMine : Boolean
+        val isMine : Boolean,
+        val createdAt : Date
     )
 }

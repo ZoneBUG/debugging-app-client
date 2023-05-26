@@ -74,7 +74,7 @@
                     android:text="테스트 댓글 입니다다다다다 테스트 댓글 입니다다다다다테스트 댓글 입니다다다다다테스트 댓글 입니다다다다다"
                     android:textSize="15sp"
                     android:textColor="@color/black"
-                    android:fontFamily="@font/main_font_eb"/>
+                    android:fontFamily="@font/main_font_b"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
