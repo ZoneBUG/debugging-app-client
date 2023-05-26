@@ -11,6 +11,7 @@ import androidx.appcompat.widget.AppCompatButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.zonebug.debugging.R
+import java.text.SimpleDateFormat
 
 class CommunityDetailRecyclerAdapter(private val commentList : MutableList<CommentDetail>, private val context : Context, private val view: View)
     : RecyclerView.Adapter<CommunityDetailRecyclerAdapter.CustomViewHolder>() {
@@ -25,6 +26,8 @@ class CommunityDetailRecyclerAdapter(private val commentList : MutableList<Comme
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
         val commentItem : CommentDetail = commentList[position]
+        val dateFormat = "yyyy-MM-dd"
+
         holder.childCommentRV.adapter = CommunityDetailChildCommentRecyclerAdapter(commentItem.childCommentList)
         holder.childCommentRV.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
@@ -34,6 +37,7 @@ class CommunityDetailRecyclerAdapter(private val commentList : MutableList<Comme
 //            holder.reportBtn.visibility = View.VISIBLE
 //        }
 
+        holder.date.text = SimpleDateFormat(dateFormat).format(commentItem.comment.createdAt)
         holder.contents.text = commentItem.comment.contents
         holder.nickname.text = commentItem.comment.nickname
 
