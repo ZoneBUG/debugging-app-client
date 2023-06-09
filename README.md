@@ -1,13 +1,17 @@
-# 디버깅 : Client
-## 1. Environment
-- Android Studio
-- Kotlin
-- Retroift
-- Firebase Storage
+<img src="https://github.com/ZoneBUG/debugging-app-server/assets/97878992/909a448d-7314-442c-8cd6-332a7cdb5e86" width=100%>
+
+# 디버깅 ; DEBUGGING <img src="https://github.com/ZoneBUG/debugging-app-server/assets/97878992/67ec499f-7947-4499-a65a-dff9d81b8036" align=left width=100>
+
+> 자영업자들을 위한 맞춤형 방역 솔루션 서비스, DEBUG Your Place! 
 
 <br>
 
-## 2. 주요 기능
+## Skills
+<img src="https://img.shields.io/badge/kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white"> <img src="https://img.shields.io/badge/Android%20Studio-3DDC84?style=for-the-badge&logo=andriod&logoColor=white"> <img src="https://img.shields.io/badge/gradle-02303A?style=for-the-badge&logo=gradle&logoColor=white">
+
+<br>
+
+## Main Feature
 #### (1) 회원가입 및 로그인
 - Preference를 이용한 JWT access, refresh 토큰 저장
 
@@ -29,7 +33,7 @@
 <br>
 
 
-## 3. Project Structure
+## Project Structure
 ```bash
 app
 └── src/main
